@@ -2,7 +2,7 @@
   "name": "delian7",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://delian7.github.io",
+  "homepage": "https://delianpetrov.com",
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@chakra-ui/react": "^2.9.3",
