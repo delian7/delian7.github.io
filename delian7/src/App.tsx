@@ -14,6 +14,7 @@ function App() {
         <main>
           <Header />
           <LandingSection />
+          {/* Remove this */}
           {/* <ProjectsSection />
           <ContactMeSection /> */}
           <Footer />
