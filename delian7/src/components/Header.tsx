@@ -29,7 +29,7 @@ const Header = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, anchor: string) => {
+  const handleClick = (e: React.MouseEvent<HTMLElement, MouseEvent>, anchor: string) => {
     e.preventDefault()
     const id = `${anchor}-section`;
     const element = document.getElementById(id);
@@ -68,12 +68,12 @@ const Header = () => {
       top={0}
       left={0}
       right={0}
-      // translateY={0}
-      transform={isVisible ? "translateY(0)" : "translateY(-80px)"}
+      // transform={isVisible ? "translateY(0)" : "translateY(-80px)"}
       transitionProperty="transform"
       transitionDuration=".3s"
       transitionTimingFunction="ease-in-out"
       backgroundColor="#18181b"
+      zIndex={1000}
     >
       <Box color="white" maxWidth="1280px" margin="0 auto">
         <HStack
@@ -89,8 +89,9 @@ const Header = () => {
           </nav>
           <nav>
             <HStack spacing={8}>
-              {/* <a href="#" onClick={(e) => {handleClick(e, "projects")}}>Projects</a>
-              <a href="#" onClick={(e) => handleClick(e, "contactme")}>Contact Me</a> */}
+              <button onClick={(e) => {handleClick(e, "timeline")}}>My Career</button>
+              {/* <button onClick={(e) => {handleClick(e, "projects")}}>Projects</button> */}
+              {/* <button onClick={(e) => {handleClick(e, "contactme")}}>Contact Me</button> */}
             </HStack>
           </nav>
         </HStack>

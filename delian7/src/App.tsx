@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import LandingSection from "./components/LandingSection";
 // import ProjectsSection from "./components/ProjectsSection";
 // import ContactMeSection from "./components/ContactMeSection";
+import Timeline from "./components/Timeline";
 import Footer from "./components/Footer";
 import { AlertProvider } from "./context/alertContext";
 import Alert from "./components/Alert";
@@ -14,7 +15,7 @@ function App() {
         <main>
           <Header />
           <LandingSection />
-          {/* Remove this */}
+          <Timeline />
           {/* <ProjectsSection />
           <ContactMeSection /> */}
           <Footer />
