@@ -30,7 +30,7 @@
 
 .timeline ol li .time-wrapper {
   position: relative;
-  font-size: 1.5rem;
+  font-size: 1rem;
   line-height: 0.9;
 }
 
@@ -82,7 +82,15 @@
 }
 
 .timeline ol li .details h3 {
-  font-size: 2rem;
+  font-size: 1.5rem;
+  line-height: 1;
+  font-weight: 700;
+  margin: 15px 0;
+}
+
+.timeline ol li .details p {
+  font-size: 1.2rem;
+  font-style: italic;
   line-height: 1;
   margin: 15px 0;
 }
