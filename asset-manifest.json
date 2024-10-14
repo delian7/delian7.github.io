@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.e3ed9eab.css",
-    "main.js": "/static/js/main.489e265e.js",
+    "main.js": "/static/js/main.2f73f7b7.js",
     "static/js/453.fd0f5223.chunk.js": "/static/js/453.fd0f5223.chunk.js",
     "static/media/saloninteractive_logo.png": "/static/media/saloninteractive_logo.7b5bc00b10b7b0f6cd0d.png",
     "static/media/anttech_logo.png": "/static/media/anttech_logo.b89eca3214c4e9b5d7bb.png",
@@ -13,11 +13,11 @@
     "static/media/applab_logo.jpg": "/static/media/applab_logo.ce253169056316a9080b.jpg",
     "index.html": "/index.html",
     "main.e3ed9eab.css.map": "/static/css/main.e3ed9eab.css.map",
-    "main.489e265e.js.map": "/static/js/main.489e265e.js.map",
+    "main.2f73f7b7.js.map": "/static/js/main.2f73f7b7.js.map",
     "453.fd0f5223.chunk.js.map": "/static/js/453.fd0f5223.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e3ed9eab.css",
-    "static/js/main.489e265e.js"
+    "static/js/main.2f73f7b7.js"
   ]
 }
