@@ -1,0 +1,53 @@
+.slider {
+  display: flex;
+  align-items: center;
+}
+
+.slider ul {
+  height: 589px;
+  width: 295px;
+  margin: 0 auto;
+  list-style: none;
+  position: relative;
+  padding: 0;
+}
+
+.slider ul:before {
+  content: "";
+  background-image: url(../images/phone-frame.png);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 9;
+  width: 100%;
+  height: 100%;
+}
+
+.slider ul li {
+  position: absolute;
+  cursor: pointer;
+  transition: all 0.7s ease-in;
+  opacity: 0;
+  line-height: 0;
+  box-shadow: 0px 1px 9px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 21px;
+  overflow: hidden;
+}
+
+.slider li img {
+  transition: all 0.5s ease;
+}
+
+.slider ul li img {
+  width: 100%;
+  cursor: pointer;
+}
+
+.slider li.active {
+  transform: scale(0.95);
+  z-index: 8;
+  opacity: 1;
+}

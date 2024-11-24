@@ -1,6 +1,6 @@
 import { Heading } from "@chakra-ui/react";
 import FullScreenSection from "./FullScreenSection";
-import '../Timeline.css';
+import '../styles/Timeline.css';
 import { useEffect, useRef } from "react";
 import TimelineEntry from "./TimelineEntry";
 

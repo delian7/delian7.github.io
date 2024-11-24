@@ -35,7 +35,7 @@ const projects: Project[] = [
     title: "Visage",
     description:
       "implemented in JS land 🔥️",
-    logo: () => require("../images/visage_logo.png"),
+    logo: () => require("../images/visage_logo_white.png"),
     hero: () => require("../images/seastatus/new-home.png"),
     modalContent: <SeastatusModalContent />
   },

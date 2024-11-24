@@ -126,44 +126,45 @@
 }
 
 .anttech-logo::after {
-  background-image: url(./images/anttech_logo.png)
+  background-image: url(../images/anttech_logo.png)
 }
 
 .applab-logo::after {
-  background-image: url(./images/applab_logo.jpg)
+  background-image: url(../images/applab_logo.jpg)
 }
 
 .cryoport-logo::after {
-  background-image: url(./images/cryoport_logo.jpg)
+  background-image: url(../images/cryoport_logo.jpg)
 }
 
 .gsa-logo::after {
-  background-image: url(./images/gsa_logo.png)
+  background-image: url(../images/gsa_logo.png)
 }
 
 .fridgeguide-logo::after {
-  background-image: url(./images/fridgeguide/fridgeguide_logo.png);
+  background-image: url(../images/fridgeguide/fridgeguide_logo.png);
   background-color: white;
 }
 
 .legalshield-logo::after {
-  background-image: url(./images/legalshield_logo.png)
+  background-image: url(../images/legalshield_logo.png)
 }
 
 .saloninteractive-logo::after {
-  background-image: url(./images/saloninteractive_logo.png)
+  background-image: url(../images/saloninteractive_logo.png)
 }
 
 .seastatus-logo::after {
-  background-image: url(./images/seastatus_logo.png)
+  background-image: url(../images/seastatus_logo.png)
 }
 
 .uci-logo::after {
-  background-image: url(./images/uci_logo.jpg)
+  background-image: url(../images/uci_logo.jpg)
 }
 
 .visage-logo::after {
-  background-image: url(./images/visage_logo.png)
+  background-image: url(../images/visage_logo.png);
+  background-color: white;
 }
 
 /* MQ STYLES
