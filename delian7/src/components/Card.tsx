@@ -1,25 +1,42 @@
-import { Heading, Box, Image, Text, VStack } from "@chakra-ui/react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
+import { Image } from "@chakra-ui/react";
+import '../styles/Card.css';
 
 interface CardProps {
   title: string;
   description: string;
-  imageSrc: string;
+  logo: string;
+  hero: string;
+  modalOpen?: () => void;
 }
 
-const Card: React.FC<CardProps> = ({ title, description, imageSrc }) => {
-  return (
-    <Box shadow="md" borderRadius="lg" backgroundColor={"white"}>
-      <Image src={imageSrc} borderRadius="lg"/>
+const Card: React.FC<CardProps> = ({ title, description, logo, hero, ...CardProps }) => {
 
-      <VStack p={4} spacing={4} alignItems={'baseline'} textColor={'black'}>
-        <Heading size="md">{title}</Heading>
-        <Text textColor="grey">{description}</Text>
-        <a href="#">See More <FontAwesomeIcon icon={faArrowRight} size="1x" /></a>
-      </VStack>
-    </Box>
+  const handleModalOpen = () => {
+    CardProps.modalOpen && CardProps.modalOpen();
+  }
+
+  return (
+    <div className="work-item-content" onClick={handleModalOpen}>
+      <div className="item-content">
+        <div className="item-details-content">
+          <div className="img-content">
+            <span>
+              <Image src={hero} className="work-image" borderRadius="lg"/>
+            </span>
+          </div>
+          <div className="job-name mt-3">
+            <h3 className="project-name">{title}</h3>
+            <div className="project-logo">
+              <Image src={logo} className="project-image transparent-background" borderRadius="lg"/>
+            </div>
+          </div>
+        </div>
+        <div className="job-footer">
+          <div className="link-job"><span className="label">{description}</span></div>
+        </div>
+      </div>
+    </div>
   )
 };
 

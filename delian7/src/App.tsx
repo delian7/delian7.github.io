@@ -1,7 +1,7 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import Header from "./components/Header";
 import LandingSection from "./components/LandingSection";
-// import ProjectsSection from "./components/ProjectsSection";
+import ProjectsSection from "./components/ProjectsSection";
 // import ContactMeSection from "./components/ContactMeSection";
 import Timeline from "./components/Timeline";
 import Footer from "./components/Footer";
@@ -15,9 +15,9 @@ function App() {
         <main>
           <Header />
           <LandingSection />
+          <ProjectsSection />
           <Timeline />
-          {/* <ProjectsSection />
-          <ContactMeSection /> */}
+          {/* <ContactMeSection /> */}
           <Footer />
           <Alert />
         </main>

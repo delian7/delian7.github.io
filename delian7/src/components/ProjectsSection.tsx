@@ -1,38 +1,60 @@
 import FullScreenSection from "./FullScreenSection";
-import { Box, Heading } from "@chakra-ui/react";
+import { Box, Button, Heading, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure } from "@chakra-ui/react";
 import Card from "./Card";
+import { useState } from "react";
 
-const projects = [
+import SeastatusModalContent from "./SeastatusModalContent";
+import FridgeGuideModalContent from "./FridgeGuideModalContent";
+
+interface Project {
+  title: string;
+  description: string;
+  logo: () => string;
+  hero: () => string;
+  modalContent: JSX.Element;
+}
+
+const projects: Project[] = [
   {
-    title: "React Space",
+    title: "FridgeGuide Ai",
     description:
-      "Handy tool belt to create amazing AR components in a React app, with redux integration via middleware️",
-    getImageSrc: () => require("../images/avatar.jpg"),
+      "A One-stop shop e",
+    logo: () => require("../images/fridgeguide/fridgeguide_logo.png"),
+    hero: () => require("../images/seastatus/new-home.png"),
+    modalContent: <FridgeGuideModalContent />
   },
   {
-    title: "React Infinite Scroll",
+    title: "SeaStatus",
     description:
-      "A scrollable bottom sheet with virtualisation support, native animations at 60 FPS and fully implemented in JS land 🔥️",
-    getImageSrc: () => require("../images/avatar.jpg"),
+      "implemented in JS land 🔥️",
+    logo: () => require("../images/seastatus_logo.png"),
+    hero: () => require("../images/seastatus/new-home.png"),
+    modalContent: <SeastatusModalContent />
   },
   {
-    title: "Photo Gallery",
+    title: "Visage",
     description:
-      "A One-stop shop for photographers to share and monetize their photos, allowing them to have a second source of income",
-    getImageSrc: () => require("../images/avatar.jpg"),
-  },
-  {
-    title: "Event planner",
-    description:
-      "A mobile application for leisure seekers to discover unique events and activities in their city with a few taps",
-    getImageSrc: () => require("../images/avatar.jpg"),
+      "implemented in JS land 🔥️",
+    logo: () => require("../images/visage_logo.png"),
+    hero: () => require("../images/seastatus/new-home.png"),
+    modalContent: <SeastatusModalContent />
   },
 ];
 
 const ProjectsSection = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [modalTitle, setModalTitle] = useState("Modal Title");
+  const [modalContent, setModalContent] = useState<JSX.Element | null>(null);
+
+  const handleOpenModal = (project: Project) => {
+    setModalTitle(project.title)
+    setModalContent(project.modalContent);
+    onOpen();
+  };
+
   return (
     <FullScreenSection
-      backgroundColor="#14532d"
+      backgroundColor="#53143A"
       isDarkBackground
       p={8}
       alignItems="flex-start"
@@ -43,18 +65,40 @@ const ProjectsSection = () => {
       </Heading>
       <Box
         display="grid"
-        gridTemplateColumns="repeat(2,minmax(0,1fr))"
+        gridTemplateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
         gridGap={8}
       >
         {projects.map((project) => (
           <Card
+            modalOpen={() => handleOpenModal(project)}
             key={project.title}
             title={project.title}
             description={project.description}
-            imageSrc={project.getImageSrc()}
+            logo={project.logo()}
+            hero={project.hero()}
           />
         ))}
       </Box>
+
+      <Modal
+        size={'4xl'}
+        motionPreset='slideInBottom'
+        onClose={onClose}
+        isOpen={isOpen}
+        // isCentered
+      >
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>{modalTitle}</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            {modalContent}
+          </ModalBody>
+          <ModalFooter>
+            <Button onClick={onClose}>Close</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </FullScreenSection>
   );
 };

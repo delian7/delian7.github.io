@@ -142,7 +142,8 @@
 }
 
 .fridgeguide-logo::after {
-  background-image: url(./images/fridgeguide_logo.png)
+  background-image: url(./images/fridgeguide/fridgeguide_logo.png);
+  background-color: white;
 }
 
 .legalshield-logo::after {
