@@ -1,5 +1,6 @@
-import React from 'react';
-import PhoneFrame from './PhoneFrame';
+import uiLoop from "../images/fridgeguide/ui-loop.gif"
+import "../styles/PhoneFrame.css"
+
 
 const FridgeGuideModalContent = () => {
     return (
@@ -9,7 +10,7 @@ const FridgeGuideModalContent = () => {
             <h2>Title</h2>
             <p>Some text for the left column content. This could include an introduction or general information.</p>
 
-            <PhoneFrame image={"https://placedog.net/295/589?id=3"}/>
+            <img className="phone-frame" alt="fridge guide ui loop" src={uiLoop} />
           </div>
           <div className="column right">
             <h2>Another Title</h2>

@@ -1,12 +1,15 @@
-import React from 'react';
+import PhoneFrame from './PhoneFrame';
 
 const SeastatusModalContent = () => {
+    const seastatus = require('../images/seastatus/seastatus.mp4');
+
     return (
       <div className="modal">
         <div className="modal-content">
           <div className="column left">
             <h2>Title</h2>
             <p>Some text for the left column content. This could include an introduction or general information.</p>
+            <PhoneFrame video={seastatus} />
           </div>
           <div className="column right">
             <h2>Another Title</h2>
