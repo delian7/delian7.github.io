@@ -40,6 +40,7 @@ const Timeline = () => {
     { year: 2022, heading: "Senior Software Engineer", description: "SalonInteractive", logo: 'saloninteractive-logo' },
     { year: 2021, heading: "Senior Software Engineer", description: "Cryoport", logo: 'cryoport-logo' },
     { year: 2019, heading: "Senior Software Engineer", description: "LegalShield", logo: 'legalshield-logo' },
+    { year: 2017, heading: "Co-Founder/Principle Software Engineer", description: "Seatatus", logo: 'seastatus-logo'},
     { year: 2016, heading: "Full Stack Engineer", description: "Visage", logo: 'visage-logo' },
     { year: 2015, heading: "Software Engineer", description: "ApplicantLab", logo: 'applab-logo' },
     { year: 2015, heading: "Graduated University of California, Irvine", description: "B.S. in Informatics & Minor in Mangagement", logo: 'uci-logo' },

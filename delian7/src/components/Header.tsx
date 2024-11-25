@@ -4,6 +4,7 @@ import SocialList from "./SocialList";
 import {
   faGithub,
   faLinkedin,
+  faCodepen
 } from "@fortawesome/free-brands-svg-icons";
 import { Box, HStack } from "@chakra-ui/react";
 
@@ -21,6 +22,11 @@ const socials = [
   {
     icon: faLinkedin,
     url: "https://www.linkedin.com/in/delianpetrov",
+    text: ''
+  },
+  {
+    icon: faCodepen,
+    url: "https://codepen.io/delian7",
     text: ''
   },
 ];
@@ -68,7 +74,7 @@ const Header = () => {
       top={0}
       left={0}
       right={0}
-      // transform={isVisible ? "translateY(0)" : "translateY(-80px)"}
+      transform={isVisible ? "translateY(0)" : "translateY(-80px)"}
       transitionProperty="transform"
       transitionDuration=".3s"
       transitionTimingFunction="ease-in-out"

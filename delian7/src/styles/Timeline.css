@@ -155,7 +155,8 @@
 }
 
 .seastatus-logo::after {
-  background-image: url(../images/seastatus_logo.png)
+  background-image: url(../images/seastatus_logo.png);
+  background-color: white;
 }
 
 .uci-logo::after {
