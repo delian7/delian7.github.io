@@ -14,7 +14,7 @@ const PhoneFrame: React.FC<PhoneProps> = ({image, video}) => {
             <img src={image} alt="" />
           )}
           {video && ( // Check if video prop is provided
-            <video autoPlay autoFocus controls>
+            <video autoPlay>
               <source src={video} type="video/mp4" />
               Your browser does not support the video tag.
             </video>

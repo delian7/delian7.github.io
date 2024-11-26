@@ -1,5 +1,5 @@
 import FullScreenSection from "./FullScreenSection";
-import { Box, Button, Heading, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure } from "@chakra-ui/react";
+import { Box, Button, Heading, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure, Text } from "@chakra-ui/react";
 import Card from "./Card";
 import { useState } from "react";
 
@@ -26,7 +26,7 @@ const projects: Project[] = [
   {
     title: "SeaStatus",
     description:
-      "implemented in JS land 🔥️",
+      "iOS On-the-Go Marine Weather App",
     logo: () => require("../images/seastatus_logo.png"),
     hero: () => require("../images/seastatus/new-home.png"),
     modalContent: <SeastatusModalContent />
@@ -47,7 +47,7 @@ const ProjectsSection = () => {
   const [modalContent, setModalContent] = useState<JSX.Element | null>(null);
 
   const handleOpenModal = (project: Project) => {
-    setModalTitle(project.title)
+    setModalTitle(`${project.title}: ${project.description}`)
     setModalContent(project.modalContent);
     onOpen();
   };
@@ -89,7 +89,15 @@ const ProjectsSection = () => {
       >
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>{modalTitle}</ModalHeader>
+          <ModalHeader>
+            <Text
+              fontSize={'2xl'}
+              color={"rgb(29, 112, 151);"}
+              fontWeight={700}
+            >
+              {modalTitle}
+            </Text>
+          </ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             {modalContent}

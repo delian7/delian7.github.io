@@ -1,6 +1,8 @@
 import PhoneFrame from './PhoneFrame';
 import hero from '../images/seastatus/hero.png';
-import { Box } from '@chakra-ui/react';
+import sofar from '../images/seastatus/sofar-product.png'
+import { Box, Img } from '@chakra-ui/react';
+import MacbookFrame from './MacbookFrame';
 
 const SeastatusModalContent = () => {
     const seastatus = require('../images/seastatus/seastatus.mp4');
@@ -9,13 +11,18 @@ const SeastatusModalContent = () => {
       <div className="modal">
         <div className="modal-content">
           <Box
-            className="row project-image"
             mb={4}
+            boxShadow={"0 2px 4px rgba(0, 0, 0, 0.5)"}
+            borderRadius='lg'
             display="flex"
             flexDirection={{ base: 'column', md: 'row' }} // Responsive flex direction
             alignItems="center" // Center items vertically
           >
-            <img src={hero} alt="Seastatus" />
+            <Img
+              src={hero}
+              borderRadius='lg'
+              alt="Seastatus"
+            />
           </Box>
           <Box
             className="row"
@@ -52,9 +59,14 @@ const SeastatusModalContent = () => {
                 SeaStatus was acquired by Sofar Ocean Technologies for a successful
                 startup exit!
               </p>
+              <MacbookFrame>
+                <Box height={"100%"}>
+                  <Img src={sofar} />
+                </Box>
+              </MacbookFrame>
             </Box>
             <Box
-              className="column right"
+              className="column"
               flex={2}
             >
               <h2>Tech Used</h2>

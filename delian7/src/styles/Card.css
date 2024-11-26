@@ -6,7 +6,6 @@
     display: flex;
     align-items: flex-end;
     cursor: pointer;
-    min-width: 400px;
     margin-left: 30px;
 }
 
@@ -63,7 +62,7 @@
     padding: 30px 20px;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 0px 0px 10px 10px;
-    height: 46px;
+    height: 70px;
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -76,10 +75,12 @@
     -webkit-box-align: center;
     align-items: center;
     color: rgb(255, 255, 255);
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-weight: 500;
     text-decoration: none;
 }
+
+/* modal */
 
 .modal-content {
   padding: 20px;
@@ -94,24 +95,23 @@
   margin-bottom: 20px; /* Add space below the image */
 }
 
-.project-image img {
-  max-width: 100%;
-  height: auto;
-}
-
 .column {
   flex: 1;
-  padding: 10px;
-}
-
-.right {
-  flex: 2;
+  padding: 12px;
 }
 
 h2 {
   font-size: 24px;
+  color:rgb(29, 112, 151);
+  font-weight: 600;
+  margin: 0.5em 0;
+}
+
+h2:first-of-type {
+  margin: 0 0 0.5em 0;
 }
 
 p {
-  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 500;
 }
