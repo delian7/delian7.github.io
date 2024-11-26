@@ -1,7 +1,8 @@
 import React from "react";
-import { Avatar, Heading, VStack } from "@chakra-ui/react";
+import { Avatar, Box, Heading, VStack } from "@chakra-ui/react";
 import FullScreenSection from "./FullScreenSection";
 import delianAvatar from "../images/avatar.jpg";
+import Weather from "./Weather";
 
 const greeting = "Hello, I am Delian!";
 const bio1 = "a senior full stack developer";
@@ -21,7 +22,11 @@ const LandingSection = () => (
       <Heading size="md" pb={8}>{greeting}</Heading>
       <Heading size="lg">{bio1}</Heading>
       <Heading size="lg">{bio2}</Heading>
+      <Box marginTop={5}>
+        <Weather />
+      </Box>
     </VStack>
+
   </FullScreenSection>
 );
 
