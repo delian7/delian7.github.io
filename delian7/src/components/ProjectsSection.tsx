@@ -5,6 +5,7 @@ import { useState } from "react";
 
 import SeastatusModalContent from "./SeastatusModalContent";
 import FridgeGuideModalContent from "./FridgeGuideModalContent";
+import MetroGroupModalContent from "./MetroGroupModalContent";
 
 interface Project {
   title: string;
@@ -22,6 +23,14 @@ const projects: Project[] = [
     logo: () => require("../images/fridgeguide/fridgeguide_logo.png"),
     hero: () => require("../images/seastatus/new-home.png"),
     modalContent: <FridgeGuideModalContent />
+  },
+  {
+    title: "MetroGroup Realty Finance",
+    description:
+      "Reporting financial metrics using AWS Lambda & interactive charts",
+    logo: () => require("../images/metrogroup/logo.png"),
+    hero: () => require("../images/metrogroup/card.png"),
+    modalContent: <MetroGroupModalContent />
   },
   {
     title: "SeaStatus",

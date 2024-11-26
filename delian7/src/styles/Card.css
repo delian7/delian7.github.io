@@ -58,6 +58,13 @@
     border-radius: 10px;
 }
 
+.item-content .project-logo .metrogroup-realty-finance {
+    width: 175px;
+    top: 0.5em;
+    position: relative;
+    max-width: 500px;
+}
+
 .item-content .job-footer {
     padding: 30px 20px;
     background: rgba(255, 255, 255, 0.2);
@@ -100,18 +107,18 @@
   padding: 12px;
 }
 
-h2 {
+.modal-content h2 {
   font-size: 24px;
   color:rgb(29, 112, 151);
   font-weight: 600;
   margin: 0.5em 0;
 }
 
-h2:first-of-type {
+.modal-content h2:first-of-type {
   margin: 0 0 0.5em 0;
 }
 
-p {
+.modal-content p {
   font-size: 1rem;
   font-weight: 500;
 }

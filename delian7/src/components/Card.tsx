@@ -28,7 +28,7 @@ const Card: React.FC<CardProps> = ({ title, description, logo, hero, ...CardProp
           <div className="job-name mt-3">
             <h3 className="project-name">{title}</h3>
             <div className="project-logo">
-              <Image src={logo} className="project-image transparent-background" borderRadius="lg"/>
+              <Image src={logo} className={`${title.toLowerCase().replace(/\s+/g, '-')} project-image`}/>
             </div>
           </div>
         </div>

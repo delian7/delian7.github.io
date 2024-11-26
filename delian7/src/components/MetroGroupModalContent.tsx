@@ -1,10 +1,9 @@
-import uiLoop from "../images/fridgeguide/ui-loop.gif"
-import hero from '../images/seastatus/hero.png';
-import sofar from '../images/seastatus/sofar-product.png'
+import hero from '../images/metrogroup/hero.png';
+import chart from '../images/metrogroup/chart.png';
 import { Box, Img } from '@chakra-ui/react';
 import MacbookFrame from './MacbookFrame';
 
-const FridgeGuideModalContent = () => {
+const MetroGroupModalContent = () => {
     return (
       <div className="modal">
         <div className="modal-content">
@@ -57,21 +56,18 @@ const FridgeGuideModalContent = () => {
                 SeaStatus was acquired by Sofar Ocean Technologies for a successful
                 startup exit!
               </p>
-              <MacbookFrame>
-                <Box height={"100%"}>
-                  <Img src={sofar} />
-                </Box>
-              </MacbookFrame>
             </Box>
             <Box
               className="column"
-              flex={2}
+              flex={4}
             >
               <h2>Tech Used</h2>
               <p>Ruby on Rails, Google Cloud, Firebase, Ionic Framework</p>
-              <Box mt={4}>
-                <img className="phone-frame" alt="fridge guide ui loop" src={uiLoop} />
-              </Box>
+              <MacbookFrame>
+                <Box height={"100%"}>
+                  <Img height={"95%"} src={chart} />
+                </Box>
+              </MacbookFrame>
             </Box>
           </Box>
         </div>
@@ -79,4 +75,4 @@ const FridgeGuideModalContent = () => {
     );
 };
 
-export default FridgeGuideModalContent;
+export default MetroGroupModalContent;
