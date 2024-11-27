@@ -47,6 +47,8 @@
 
 .item-content .job-name .project-name {
     color: rgb(255, 255, 255);
+    font-size: large;
+    font-weight: 600;
 }
 
 .item-content .job-name .project-logo {

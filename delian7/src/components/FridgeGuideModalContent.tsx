@@ -1,6 +1,6 @@
 import uiLoop from "../images/fridgeguide/ui-loop.gif"
-import hero from '../images/seastatus/hero.png';
-import sofar from '../images/seastatus/sofar-product.png'
+import adminUi from '../images/fridgeguide/admin.png'
+import aiForGood from '../images/fridgeguide/ai-for-good.avif'
 import { Box, Img } from '@chakra-ui/react';
 import MacbookFrame from './MacbookFrame';
 
@@ -17,9 +17,9 @@ const FridgeGuideModalContent = () => {
             alignItems="center"
           >
             <Img
-              src={hero}
+              src={aiForGood}
               borderRadius='lg'
-              alt="Seastatus"
+              alt="FridgeGuide at AI For Good Conference"
             />
           </Box>
           <Box
@@ -34,32 +34,36 @@ const FridgeGuideModalContent = () => {
             >
               <h2>Background</h2>
               <p>
-                We developed a Ruby on Rails application delivering personalized marine weather data for SeaStatus, taking it from concept to MVP in just two months. The platform aggregates weather data from APIs like NOAA, Dark Sky, and PlanetOS, using Regex for time zone and location-based parsing. We utilized a JavaScript cross-platform framework (Ionic) to efficiently build iOS, Android, and web apps from a single codebase.
+                FridgeGuide Ai was born from a vision to revolutionize food interaction at home.
+                Initially a consumer app, it integrated AI to track groceries, reduce waste,
+                and generate personalized recipes. As it evolved, the technology aimed to help
+                organizations like food pantries tackle inventory challenges.
               </p>
 
               <h2>Challenge</h2>
               <p>
-                As a pre-seed startup, SeaStatus required a cost-effective, resource-efficient solution. We leveraged open-source libraries and frameworks, used cross-platform development to streamline processes, and relied on third-party APIs for rapid data integration and personalized weather updates.
+                Food waste and inefficiency extend to organizations managing large inventories.
+                Food banks face challenges in tracking donations and managing expiration dates,
+                impacting their ability to serve communities effectively.
               </p>
 
               <h2>Solution</h2>
               <p>
-                Aggregated data from NOAA, Dark Sky, PlanetOS, WeatherFlow, and WorldTides into marine weather charts.
-                Cached location data with Amazon CloudFront for fast loading.
-                Built a Ruby on Rails backend on Google Cloud to fetch and store data in Firestore via delayed jobs.
-                Scheduled personalized push notifications using Node.js cloud functions.
+                FridgeGuide Ai pivoted to a B2B solution for food pantries.
+                It simplifies inventory management, tracks expiration dates,
+                and creates meal plans using available resources.
+                Features like donor logging and volunteer coordination streamline operations.
               </p>
 
               <h2>Success</h2>
               <p>
-                We launched the SeaStatus MVP in 2 months of development time,
-                and won a $25,000 prize from the Big Ocean Button Challenge!
-                SeaStatus was acquired by Sofar Ocean Technologies for a successful
-                startup exit!
+                FridgeGuide Ai has achieved significant success, earning a $1.5 million investment.
+                Its user-friendly design and AI tools transform grocery management,
+                contributing to global efforts aligned with the UN Sustainable Development Goals.
               </p>
               <MacbookFrame>
                 <Box height={"100%"}>
-                  <Img src={sofar} />
+                  <Img src={adminUi} />
                 </Box>
               </MacbookFrame>
             </Box>
@@ -68,7 +72,7 @@ const FridgeGuideModalContent = () => {
               flex={2}
             >
               <h2>Tech Used</h2>
-              <p>Ruby on Rails, Google Cloud, Firebase, Ionic Framework</p>
+              <p>Ruby on Rails, React Native, Microsoft Azure, Eden Ai, ChatGPT Streaming, Firebase Push Notifications</p>
               <Box mt={4}>
                 <img className="phone-frame" alt="fridge guide ui loop" src={uiLoop} />
               </Box>
