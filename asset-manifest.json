@@ -1,23 +1,39 @@
 {
   "files": {
-    "main.css": "/static/css/main.e838a15e.css",
-    "main.js": "/static/js/main.5fd8a83d.js",
+    "main.css": "/static/css/main.b2f79902.css",
+    "main.js": "/static/js/main.b01aed58.js",
     "static/js/453.fd0f5223.chunk.js": "/static/js/453.fd0f5223.chunk.js",
+    "static/media/seastatus.mp4": "/static/media/seastatus.2d9fcdd59c40c7ff1a18.mp4",
+    "static/media/hero.png": "/static/media/hero.d55f6f2dc5c303c8f6a1.png",
+    "static/media/sofar-product.png": "/static/media/sofar-product.e890b04f574347dfc534.png",
+    "static/media/hero2.png": "/static/media/hero2.001bc1a111174a13fd38.png",
+    "static/media/card.png": "/static/media/card.78e6250869383f3abdfa.png",
+    "static/media/visage-templates.png": "/static/media/visage-templates.1b996730bfbc832d35bf.png",
+    "static/media/ui-loop.gif": "/static/media/ui-loop.f871ffa3b91bc1b8c83b.gif",
+    "static/media/admin.png": "/static/media/admin.aa8b6d0766ab97f7f042.png",
+    "static/media/visage-colors.png": "/static/media/visage-colors.bb11b6229ceee2be43b5.png",
+    "static/media/chart.png": "/static/media/chart.18741a04bdc074734782.png",
     "static/media/saloninteractive_logo.png": "/static/media/saloninteractive_logo.7b5bc00b10b7b0f6cd0d.png",
+    "static/media/phone-frame.png": "/static/media/phone-frame.4b5704a01a43ca474a85.png",
+    "static/media/ai-for-good.avif": "/static/media/ai-for-good.fd3778442410e30615d7.avif",
+    "static/media/new-home.png": "/static/media/new-home.cf1ca1c64b40465a79c5.png",
+    "static/media/logo.png": "/static/media/logo.1dcf6bc7f1102428cf1f.png",
     "static/media/anttech_logo.png": "/static/media/anttech_logo.b89eca3214c4e9b5d7bb.png",
+    "static/media/visage_logo.png": "/static/media/visage_logo.39d078a03dfcfd816bc8.png",
     "static/media/avatar.jpg": "/static/media/avatar.498bd0fbff65fb9cfb2e.jpg",
     "static/media/seastatus_logo.png": "/static/media/seastatus_logo.9b82598a94cfbf3f1914.png",
+    "static/media/visage_logo_white.png": "/static/media/visage_logo_white.a26925cafdb25a94c87f.png",
+    "static/media/fridgeguide_logo.png": "/static/media/fridgeguide_logo.d10ca9495573b5dbb7dd.png",
     "static/media/gsa_logo.png": "/static/media/gsa_logo.5c6d1270cf3a9c314654.png",
-    "static/media/fridgeguide_logo.png": "/static/media/fridgeguide_logo.57382edf3d1e38a9cb97.png",
     "static/media/cryoport_logo.jpg": "/static/media/cryoport_logo.79cb78d6d27df7a8fc2f.jpg",
     "static/media/applab_logo.jpg": "/static/media/applab_logo.ce253169056316a9080b.jpg",
     "index.html": "/index.html",
-    "main.e838a15e.css.map": "/static/css/main.e838a15e.css.map",
-    "main.5fd8a83d.js.map": "/static/js/main.5fd8a83d.js.map",
+    "main.b2f79902.css.map": "/static/css/main.b2f79902.css.map",
+    "main.b01aed58.js.map": "/static/js/main.b01aed58.js.map",
     "453.fd0f5223.chunk.js.map": "/static/js/453.fd0f5223.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e838a15e.css",
-    "static/js/main.5fd8a83d.js"
+    "static/css/main.b2f79902.css",
+    "static/js/main.b01aed58.js"
   ]
 }
