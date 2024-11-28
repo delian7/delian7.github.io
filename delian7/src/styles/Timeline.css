@@ -4,6 +4,17 @@
   max-width: 1000px;
 }
 
+#timeline-section {
+  scroll-margin-top: 80px;
+}
+
+@media (max-width: 667px) {
+  #timeline-section {
+    scroll-margin-top: 0;
+  }
+}
+
+
 .timeline ol {
   position: relative;
   list-style: none;
