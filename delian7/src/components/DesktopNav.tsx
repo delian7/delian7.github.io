@@ -36,6 +36,7 @@ const DesktopNav: React.FC<DesktopNavProps> = ({socials, handleClick}) => {
 
   return (
     <Box
+      className="desktop-nav"
       position="fixed"
       top={0}
       left={0}

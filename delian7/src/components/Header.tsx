@@ -5,6 +5,7 @@ import {
   faCodepen
 } from "@fortawesome/free-brands-svg-icons";
 import DesktopNav from "./DesktopNav";
+import MobileNav from "./MobileNav";
 
 const socials = [
   {
@@ -43,7 +44,10 @@ const Header = () => {
   };
 
   return (
-    <DesktopNav socials={socials} handleClick={handleClick}/>
+    <>
+      <DesktopNav socials={socials} handleClick={handleClick}/>
+      <MobileNav socials={socials} handleClick={handleClick} />
+    </>
   );
 };
 export default Header;
