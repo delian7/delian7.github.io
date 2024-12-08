@@ -2,58 +2,41 @@ import { ChakraProvider } from "@chakra-ui/react";
 import Header from "./components/Header";
 import LandingSection from "./components/LandingSection";
 import ProjectsSection from "./components/ProjectsSection";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // import ContactMeSection from "./components/ContactMeSection";
 import Timeline from "./components/Timeline";
 import Footer from "./components/Footer";
 import { AlertProvider } from "./context/alertContext";
 import Alert from "./components/Alert";
+import RedirectPage from "./components/RedirectPage";
+
+const HomePage = () => {
+  return (
+    <main>
+      <Header />
+      <LandingSection />
+      <ProjectsSection />
+      <Timeline />
+      {/* <ContactMeSection /> */}
+      <Footer />
+      <Alert />
+    </main>
+  )
+}
 
 function App() {
   return (
-    <ChakraProvider>
-      <AlertProvider>
-        <main>
-          <Header />
-          <LandingSection />
-          <ProjectsSection />
-          <Timeline />
-          {/* <ContactMeSection /> */}
-          <Footer />
-          <Alert />
-        </main>
-      </AlertProvider>
-    </ChakraProvider>
+    <Router>
+      <ChakraProvider>
+        <AlertProvider>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/:name" element={<RedirectPage />} />
+          </Routes>
+        </AlertProvider>
+      </ChakraProvider>
+    </Router>
   );
 }
 
 export default App;
-
-
-
-
-// import React from 'react';
-// import logo from './logo.svg';
-// import './App.css';
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Delian Petrov's React Website. Coming Soon!
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;
