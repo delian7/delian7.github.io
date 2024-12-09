@@ -1,10 +1,13 @@
 import { useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
 import {useAlertContext} from "../context/alertContext";
 
 
 const RedirectPage = () => {
-  const { name } = useParams(); // Extract 'name' from the route
+  const { search } = window.location; // Get the current URL's search string
+  const params = new URLSearchParams(search); // Create a URLSearchParams object
+  const name = params.get('name'); // Extract the 'name' parameter
+  // const { name } = useParams(); // Extract 'name' from the route
   const navigate = useNavigate(); // Navigate programmatically
   const { onOpen } = useAlertContext();
 
