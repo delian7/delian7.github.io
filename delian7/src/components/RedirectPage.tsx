@@ -13,6 +13,7 @@ const RedirectPage = () => {
     const fetchAndRedirect = async () => {
       try {
         // Replace with your Lambda API URL
+        debugger
         const response = await fetch(`https://qpqyy5wg42qcon34ph6mhljct40wtmpl.lambda-url.us-east-2.on.aws/?name=${name}`)
         if (response.ok) {
           const data = await response.json();
