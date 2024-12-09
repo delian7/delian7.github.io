@@ -2,7 +2,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import Header from "./components/Header";
 import LandingSection from "./components/LandingSection";
 import ProjectsSection from "./components/ProjectsSection";
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Route, Routes, HashRouter } from 'react-router-dom';
 // import ContactMeSection from "./components/ContactMeSection";
 import Timeline from "./components/Timeline";
 import Footer from "./components/Footer";
@@ -25,10 +25,8 @@ const HomePage = () => {
 }
 
 function App() {
-  const basename = process.env.REACT_APP_BASENAME || '';
-
   return (
-    <Router basename={basename}>
+    <HashRouter>
       <ChakraProvider>
         <AlertProvider>
           <Routes>
@@ -37,7 +35,7 @@ function App() {
           </Routes>
         </AlertProvider>
       </ChakraProvider>
-    </Router>
+    </HashRouter>
   );
 }
 
