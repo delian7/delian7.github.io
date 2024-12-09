@@ -14,6 +14,7 @@ const RedirectPage = () => {
       try {
         // Replace with your Lambda API URL
         debugger
+        alert("asdf");
         const response = await fetch(`https://qpqyy5wg42qcon34ph6mhljct40wtmpl.lambda-url.us-east-2.on.aws/?name=${name}`)
         if (response.ok) {
           const data = await response.json();
