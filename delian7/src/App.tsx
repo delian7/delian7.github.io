@@ -25,8 +25,10 @@ const HomePage = () => {
 }
 
 function App() {
+  const basename = process.env.REACT_APP_BASENAME || '';
+
   return (
-    <Router>
+    <Router basename={basename}>
       <ChakraProvider>
         <AlertProvider>
           <Routes>
