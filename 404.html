@@ -4,6 +4,21 @@
     <meta charset="utf-8">
     <title>Single Page Apps for GitHub Pages</title>
     <script type="text/javascript">
+      (function() {
+        var pathname = window.location.pathname;
+        var search = window.location.search;
+        var redirect = pathname + search;
+
+        if (redirect.startsWith("/?/")) {
+          redirect = redirect.replace("/?/", "/");
+          window.history.replaceState(null, null, redirect);
+        }
+
+        // Redirect to index.html for SPA handling
+        window.location.replace("/index.html");
+      })();
+    </script>
+    <!-- <script type="text/javascript">
       // Single Page Apps for GitHub Pages
       // MIT License
       // https://github.com/rafgraph/spa-github-pages
@@ -33,7 +48,7 @@
         l.hash
       );
 
-    </script>
+    </script> -->
   </head>
   <body>
   </body>
