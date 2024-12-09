@@ -15,8 +15,6 @@
         }
 
         // Redirect to index.html for SPA handling
-        alert(pathname)
-        alert(redirect)
         window.location.replace(`/index.html?name=${pathname.slice(1)}`);
       })();
     </script>
