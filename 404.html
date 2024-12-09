@@ -15,7 +15,7 @@
         }
 
         // Redirect to index.html for SPA handling
-        window.location.replace(redirect);
+        window.location.replace(`/index.html?name=${pathname}&search=${search}`);
       })();
     </script>
     <!-- <script type="text/javascript">
