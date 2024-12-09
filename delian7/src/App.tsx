@@ -32,6 +32,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/:name" element={<RedirectPage />} />
+            <Route path="*" element={<HomePage />} />
           </Routes>
         </AlertProvider>
       </ChakraProvider>
