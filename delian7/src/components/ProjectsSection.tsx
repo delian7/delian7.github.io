@@ -90,6 +90,14 @@ const ProjectsSection = () => {
         ))}
       </Box>
 
+      <div style={{ display: 'none' }}>
+        {projects.map((project) => (
+          <div key={project.title} id={`modal-content-${project.title}`}>
+            {project.modalContent}
+          </div>
+        ))}
+      </div>
+
       <Modal
         size={'4xl'}
         motionPreset='slideInBottom'
