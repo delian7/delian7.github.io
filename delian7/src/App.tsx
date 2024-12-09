@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import { AlertProvider } from "./context/alertContext";
 import Alert from "./components/Alert";
 import RedirectPage from "./components/RedirectPage";
+import SeastatusModalContent from "./components/SeastatusModalContent";
 
 const HomePage = () => {
   return (
@@ -31,6 +32,7 @@ function App() {
         <AlertProvider>
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/seastatus" element={<SeastatusModalContent />} />
             <Route path="/:name" element={<RedirectPage />} />
             <Route path="*" element={<HomePage />} />
           </Routes>
