@@ -1,11 +1,10 @@
 import { useState } from 'react'
 import '../styles/MobileNav.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import SocialList from './SocialList';
 import { Box, HStack } from '@chakra-ui/react';
 
 interface MobileNavProps {
-  socials: any;
+  socials: any[];
   handleClick(event: React.MouseEvent<HTMLElement, MouseEvent>, section: string): void;
 }
 
@@ -24,7 +23,7 @@ const MobileNav: React.FC<MobileNavProps> = ({socials, handleClick}) => {
         <ul className="main">
           <li><a href="#0" onClick={(e) => handleClick(e, "timeline")}>My Career</a></li>
           <li><a href="#0" onClick={(e) => handleClick(e, "projects")}>Projects</a></li>
-          {/* <li><a href="#0" onClick={(e) => handleClick(e, "contact")}>Contact Me</a></li> */}
+          <li><a href="#0" onClick={(e) => handleClick(e, "contactme")}>Contact Me</a></li>
         </ul>
 
         <HStack
@@ -32,7 +31,7 @@ const MobileNav: React.FC<MobileNavProps> = ({socials, handleClick}) => {
           spacing={8}
           marginY={5}
         >
-          <SocialList socials={socials} />
+          <SocialList socials={socials.filter(social => social.url !== 'mailto: hello@delianpetrov.com')} />
         </HStack>
         <Box color='white' marginY={5} fontSize={'lg'} fontWeight={600} className="about">
           <a href="mailto:hello@delianpetrov.com" className="contact-email">hello@delianpetrov.com</a>

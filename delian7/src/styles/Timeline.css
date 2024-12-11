@@ -10,7 +10,7 @@
 
 @media (max-width: 667px) {
   #timeline-section {
-    scroll-margin-top: 0;
+    scroll-margin-top: 30px;
   }
 }
 

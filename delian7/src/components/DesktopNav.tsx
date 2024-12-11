@@ -65,7 +65,7 @@ const DesktopNav: React.FC<DesktopNavProps> = ({socials, handleClick}) => {
               <HStack spacing={8}>
                 <button onClick={(e) => {handleClick(e, "timeline")}}>My Career</button>
                 <button onClick={(e) => {handleClick(e, "projects")}}>Projects</button>
-                {/* <button onClick={(e) => {handleClick(e, "contactme")}}>Contact Me</button> */}
+                <button onClick={(e) => {handleClick(e, "contactme")}}>Contact Me</button>
               </HStack>
             </div>
           </HStack>

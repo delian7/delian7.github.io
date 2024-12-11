@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import LandingSection from "./components/LandingSection";
 import ProjectsSection from "./components/ProjectsSection";
 import { Route, Routes, HashRouter } from 'react-router-dom';
-// import ContactMeSection from "./components/ContactMeSection";
+import ContactMeSection from "./components/ContactMeSection";
 import Timeline from "./components/Timeline";
 import Footer from "./components/Footer";
 import { AlertProvider } from "./context/alertContext";
@@ -18,7 +18,7 @@ const HomePage = () => {
       <LandingSection />
       <ProjectsSection />
       <Timeline />
-      {/* <ContactMeSection /> */}
+      <ContactMeSection />
       <Footer />
       <Alert />
     </main>
