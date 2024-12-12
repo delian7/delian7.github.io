@@ -16,16 +16,23 @@ const LandingSection = () => (
     alignItems="center"
     isDarkBackground
     backgroundColor="#2A4365"
+    position="relative"
+    w="100%"
   >
     <VStack spacing={3}>
       <Avatar size="full" maxW={'60'} src={delianAvatar} />
       <Heading size="md" pb={8}>{greeting}</Heading>
       <Heading size="lg">{bio1}</Heading>
       <Heading size="lg">{bio2}</Heading>
-      <Box marginTop={5}>
-        <Weather />
-      </Box>
     </VStack>
+    <Box
+      top={{base: 0, md: '80px'}}
+      marginTop={{base: '5em', md: 0}}
+      position={{base: 'relative', md: 'absolute'}}
+      left='5'
+    >
+      <Weather />
+    </Box>
 
   </FullScreenSection>
 );
