@@ -6,6 +6,7 @@ import { useState } from "react";
 import SeastatusModalContent from "./SeastatusModalContent";
 import FridgeGuideModalContent from "./FridgeGuideModalContent";
 import MetroGroupModalContent from "./MetroGroupModalContent";
+import VisageModalContent from "./VisageModalContent";
 
 interface Project {
   title: string;
@@ -19,9 +20,9 @@ const projects: Project[] = [
   {
     title: "FridgeGuide Ai",
     description:
-      "A One-stop shop e",
+      "AI designed to categorize groceries and create new recipes",
     logo: () => require("../images/fridgeguide/fridgeguide_logo.png"),
-    hero: () => require("../images/seastatus/new-home.png"),
+    hero: () => require("../images/fridgeguide/hero2.png"),
     modalContent: <FridgeGuideModalContent />
   },
   {
@@ -43,10 +44,10 @@ const projects: Project[] = [
   {
     title: "Visage",
     description:
-      "implemented in JS land 🔥️",
+      "Brand creation and visualization tool",
     logo: () => require("../images/visage_logo_white.png"),
-    hero: () => require("../images/seastatus/new-home.png"),
-    modalContent: <SeastatusModalContent />
+    hero: () => require("../images/visage/card.png"),
+    modalContent: <VisageModalContent />
   },
 ];
 
@@ -88,6 +89,14 @@ const ProjectsSection = () => {
           />
         ))}
       </Box>
+
+      <div style={{ display: 'none' }}>
+        {projects.map((project) => (
+          <div key={project.title} id={`modal-content-${project.title}`}>
+            {project.modalContent}
+          </div>
+        ))}
+      </div>
 
       <Modal
         size={'4xl'}

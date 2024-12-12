@@ -8,6 +8,13 @@
   scroll-margin-top: 80px;
 }
 
+@media (max-width: 667px) {
+  #timeline-section {
+    scroll-margin-top: 30px;
+  }
+}
+
+
 .timeline ol {
   position: relative;
   list-style: none;

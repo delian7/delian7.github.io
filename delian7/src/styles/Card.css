@@ -2,6 +2,20 @@
   scroll-margin-top: 80px;
 }
 
+#contactme-section {
+  scroll-margin-top: 80px;
+}
+
+@media (max-width: 667px) {
+  #projects-section {
+    scroll-margin-top: 30px;
+  }
+
+  #contactme-section {
+    scroll-margin-top: 30px;
+  }
+}
+
 .work-item-content {
     display: flex;
     align-items: flex-end;
@@ -47,6 +61,8 @@
 
 .item-content .job-name .project-name {
     color: rgb(255, 255, 255);
+    font-size: large;
+    font-weight: 600;
 }
 
 .item-content .job-name .project-logo {

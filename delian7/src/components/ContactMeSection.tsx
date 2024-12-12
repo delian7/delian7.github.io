@@ -30,26 +30,28 @@ const LandingSection = () => {
 
   return (
     <FullScreenSection
-      isDarkBackground
       backgroundColor="#512DA8"
-      py={16}
+      isDarkBackground
+      p={8}
+      alignItems="flex-start"
       spacing={8}
+      width="100%"
     >
-      <VStack w="1024px" p={32} alignItems="flex-start">
-        <Heading as="h1" id="contactme-section">
-          Contact me
-        </Heading>
-        <Box p={6} rounded="md" w="100%">
+      <Heading as="h1" id="contactme-section" >
+        Contact me
+      </Heading>
+      <VStack width="100%">
+        <Box py={6} width={{base: "400px", md: "750px"}} rounded="md" >
           <Formik
-            initialValues={{ firstName: '', email: '', type: '', comment: '' }}
+            initialValues={{ firstName: '', email: '', reason: '', message: '' }}
             onSubmit={(values, { resetForm }) => {
-              submit('https://example.com', values)
+              submit('https://dhdmjop4ywcsbgyiwncrg4amdi0ksjqm.lambda-url.us-east-2.on.aws', values)
               resetForm()
             }}
             validationSchema={Yup.object({
               firstName: Yup.string().max(15, 'Must be 15 characters or less').required('Required'),
               email: Yup.string().email('Invalid email address').required('Required'),
-              comment: Yup.string().required('Required')
+              message: Yup.string().required('Required')
             })}
           >
             {formik => (
@@ -73,26 +75,27 @@ const LandingSection = () => {
                     <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
                   </FormControl>
                   <FormControl>
-                    <FormLabel htmlFor="type">Type of enquiry</FormLabel>
+                    <FormLabel htmlFor="reason">Type of enquiry</FormLabel>
                     <Select
-                      id="type"
-                      {...formik.getFieldProps('type')}
-                    >
-                      <option value="hireMe">Freelance project proposal</option>
-                      <option value="openSource">
-                        Open source consultancy session
+                      id="reason"
+                      placeholder=" "
+                      {...formik.getFieldProps('reason')}
+                      >
+                      <option value="recruitment">
+                        Recruitment/hiring proposal
                       </option>
+                      <option value="hireMe">Freelance project proposal</option>
                       <option value="other">Other</option>
                     </Select>
                   </FormControl>
-                  <FormControl isInvalid={formik.touched.comment && !!formik.errors.comment}>
-                    <FormLabel htmlFor="comment">Your message</FormLabel>
+                  <FormControl isInvalid={formik.touched.message && !!formik.errors.message}>
+                    <FormLabel htmlFor="message">Your message</FormLabel>
                     <Textarea
                       id="comment"
                       height={250}
-                      {...formik.getFieldProps('comment')}
+                      {...formik.getFieldProps('message')}
                     />
-                    <FormErrorMessage>{formik.errors.comment}</FormErrorMessage>
+                    <FormErrorMessage>{formik.errors.message}</FormErrorMessage>
                   </FormControl>
                   <Button type="submit" isDisabled={isLoading} colorScheme="purple" width="full">
                     {isLoading ? <Spinner /> : 'Submit'}

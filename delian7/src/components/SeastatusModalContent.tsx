@@ -51,14 +51,6 @@ const SeastatusModalContent = () => {
                 Built a Ruby on Rails backend on Google Cloud to fetch and store data in Firestore via delayed jobs.
                 Scheduled personalized push notifications using Node.js cloud functions.
               </p>
-
-              <h2>Success</h2>
-              <p>
-                We launched the SeaStatus MVP in 2 months of development time,
-                and won a $25,000 prize from the Big Ocean Button Challenge!
-                SeaStatus was acquired by Sofar Ocean Technologies for a successful
-                startup exit!
-              </p>
               <MacbookFrame>
                 <Box height={"100%"}>
                   <Img src={sofar} />
@@ -71,7 +63,14 @@ const SeastatusModalContent = () => {
             >
               <h2>Tech Used</h2>
               <p>Ruby on Rails, Google Cloud, Firebase, Ionic Framework</p>
-              <Box mt={4}>
+              <h2>Success</h2>
+              <p>
+                We launched the SeaStatus MVP in 2 months of development time,
+                and won a $25,000 prize from the Big Ocean Button Challenge!
+                SeaStatus was acquired by Sofar Ocean Technologies for a successful
+                startup exit!
+              </p>
+              <Box mt={5}>
                 <PhoneFrame video={seastatus} />
               </Box>
             </Box>
