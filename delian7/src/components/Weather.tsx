@@ -72,7 +72,12 @@ const Weather: React.FC<WeatherProps> = () => {
   useEffect(() => {
     const getLocationByIP = async (ip: string) => {
       const response = await fetch(`http://ip-api.com/json/${ip}`);
-      const data: {city: string} = await response.json();
+      const data: {city: string, timezone: string} = await response.json();
+
+      if (!data.timezone.includes('America')) {
+        setUnits('metric');
+      }
+
       return data.city;
     };
 
