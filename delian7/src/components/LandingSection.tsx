@@ -26,14 +26,14 @@ const LandingSection = () => (
       <Heading size="lg">{bio2}</Heading>
     </VStack>
     <Box
+      display={{base: 'none', md: 'block'}}
       top={{base: 0, md: '80px'}}
       marginTop={{base: '5em', md: 0}}
       position={{base: 'relative', md: 'absolute'}}
-      left='5'
+      right={{base: '0', md: '5'}}
     >
       <Weather />
     </Box>
-
   </FullScreenSection>
 );
 

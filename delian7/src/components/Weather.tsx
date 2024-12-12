@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import '../styles/Weather.css'
 import { Input, SlideFade } from "@chakra-ui/react";
 import { Icon, MapPin, Sun, Cloud, CloudRain } from 'react-feather';
-import { Box } from '@chakra-ui/react'
+import { Box, Text } from '@chakra-ui/react'
 
 
 const iconMap: { [key: string]: Icon } = {
@@ -95,6 +95,7 @@ const Weather: React.FC<WeatherProps> = () => {
       await getWeatherDataRef.current(location);
       setLoading(false);
     }
+    console.log('asdf')
     fetchLocation()
   }, []);
 
@@ -111,7 +112,7 @@ const Weather: React.FC<WeatherProps> = () => {
   const handleSubmit = (event: any) => {
     event.preventDefault();
 
-    setUnits('metric')
+    setUnits('metric');
     getWeatherData(address);
   };
 
@@ -122,15 +123,20 @@ const Weather: React.FC<WeatherProps> = () => {
           <div className="weather-panel">
             <div className="weather-overlay"></div>
             <div className="date-info">
-              <h2 className="day-name">{new Date().toLocaleDateString('en-US', { weekday: 'long' })}</h2>
-              <span className="day-number">{new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+              <span className="day-number">{new Date().toLocaleDateString('en-US', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' })}</span>
               <MapPin className="city-icon" />
               <span className="city">{currentWeather?.city_name}</span>
+              <Box
+                display={'flex'} gap={'1'} mt={'2'} fontSize={'xs'}
+              >
+                <div className="value">High: {currentWeather?.high}°</div>
+                <span className="value">Low: {currentWeather?.low}°</span>
+              </Box>
             </div>
-            <Box className="weather-info">
+            <Box className="weather-info" display={'flex'} flexDirection={'column'} alignItems={'center'}>
               <IconComponent className="weather-icon" />
               <h1 className="temperature">{currentWeather?.temperature}°<span>{ units === 'imperial' ? 'F' : 'C' }</span></h1>
-              <h3 className="weather-description">{currentWeather?.condition}</h3>
+              <Text isTruncated maxWidth={'125px'} className="weather-description">{currentWeather?.condition}</Text>
 
               {cacheKeyExists && <span className="cache-badge">Served from Cache</span>}
             </Box>

@@ -29,7 +29,7 @@
     box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
     background-color: #1F262D;
     color: #ffffff;
-    height: 230px;
+    height: 115px;
     position: relative;
     transition: opacity 0.5s ease;
 }
@@ -38,7 +38,7 @@
     position: relative;
     height: 100%;
     border-radius: 25px;
-    width: 200px;
+    width: 275px;
     box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.2);
     transition: transform 200ms ease;
     transform: translateZ(0) scale(1.02) perspective(1000px);
@@ -59,7 +59,7 @@
 .date-info {
     position: absolute;
     top: 10px;
-    left: 25px;
+    left: 15px;
 }
 
 .day-name {
@@ -72,9 +72,9 @@
 
 .city {
     display: inline-block;
-    margin-top: 10px;
+    margin: 0.4em 0;
     font-weight: 600;
-    font-size: 1.3em;
+    font-size: 1.5em;
 }
 
 .city-icon {
@@ -86,13 +86,12 @@
 
 .weather-info {
     position: absolute;
-    bottom: 5px;
-    left: 25px;
-    text-align: right;
+    top: 5px;
+    right: 10px;
 }
 
 .weather-icon {
-    height: 60px;
+    height: 30px;
     width: auto;
 }
 
