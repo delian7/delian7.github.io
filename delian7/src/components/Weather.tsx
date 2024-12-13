@@ -1,9 +1,8 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import '../styles/Weather.css'
 import { Input, SlideFade } from "@chakra-ui/react";
-import { Icon, MapPin, Sun, Cloud, CloudRain, CloudLightning, CloudSnow, CloudDrizzle, Info } from 'react-feather';
+import { Icon, MapPin, Sun, Cloud, CloudRain, CloudLightning, CloudSnow, CloudDrizzle } from 'react-feather';
 import { Box, Text } from '@chakra-ui/react'
-
 
 const iconMap: { [key: string]: Icon } = {
   sun: Sun,
