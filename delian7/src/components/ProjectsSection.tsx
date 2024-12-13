@@ -1,7 +1,8 @@
 import FullScreenSection from "./FullScreenSection";
-import { Box, Button, Heading, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure, Text } from "@chakra-ui/react";
+import { Box, Heading } from "@chakra-ui/react";
 import Card from "./Card";
-import { useState } from "react";
+import { useModalContext } from '../context/modalContext'; // Import the hook
+
 
 import SeastatusModalContent from "./SeastatusModalContent";
 import FridgeGuideModalContent from "./FridgeGuideModalContent";
@@ -52,14 +53,12 @@ const projects: Project[] = [
 ];
 
 const ProjectsSection = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const [modalTitle, setModalTitle] = useState("Modal Title");
-  const [modalContent, setModalContent] = useState<JSX.Element | null>(null);
+  const { openModal, setModalContent, setModalTitle } = useModalContext();
 
   const handleOpenModal = (project: Project) => {
     setModalTitle(`${project.title}: ${project.description}`)
     setModalContent(project.modalContent);
-    onOpen();
+    openModal();
   };
 
   return (
@@ -97,34 +96,6 @@ const ProjectsSection = () => {
           </div>
         ))}
       </div>
-
-      <Modal
-        size={'4xl'}
-        motionPreset='slideInBottom'
-        onClose={onClose}
-        isOpen={isOpen}
-        // isCentered
-      >
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>
-            <Text
-              fontSize={'2xl'}
-              color={"rgb(29, 112, 151);"}
-              fontWeight={700}
-            >
-              {modalTitle}
-            </Text>
-          </ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>
-            {modalContent}
-          </ModalBody>
-          <ModalFooter>
-            <Button onClick={onClose}>Close</Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
     </FullScreenSection>
   );
 };

@@ -10,6 +10,7 @@ import { AlertProvider } from "./context/alertContext";
 import Alert from "./components/Alert";
 import RedirectPage from "./components/RedirectPage";
 import SeastatusModalContent from "./components/SeastatusModalContent";
+import { ModalProvider } from "./context/modalContext";
 
 const HomePage = () => {
   return (
@@ -30,12 +31,14 @@ function App() {
     <HashRouter>
       <ChakraProvider>
         <AlertProvider>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/seastatus" element={<SeastatusModalContent />} />
-            <Route path="/:name" element={<RedirectPage />} />
-            <Route path="*" element={<HomePage />} />
-          </Routes>
+          <ModalProvider>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/seastatus" element={<SeastatusModalContent />} />
+              <Route path="/:name" element={<RedirectPage />} />
+              <Route path="*" element={<HomePage />} />
+            </Routes>
+          </ModalProvider>
         </AlertProvider>
       </ChakraProvider>
     </HashRouter>
