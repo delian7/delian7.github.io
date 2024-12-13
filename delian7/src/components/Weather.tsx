@@ -1,16 +1,18 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import '../styles/Weather.css'
 import { Input, SlideFade } from "@chakra-ui/react";
-import { Icon, MapPin, Sun, Cloud, CloudRain } from 'react-feather';
+import { Icon, MapPin, Sun, Cloud, CloudRain, CloudLightning, CloudSnow, CloudDrizzle, Info } from 'react-feather';
 import { Box, Text } from '@chakra-ui/react'
 
 
 const iconMap: { [key: string]: Icon } = {
   sun: Sun,
   cloud: Cloud,
-  rain: CloudRain,
+  "cloud-rain": CloudRain,
+  "cloud-lightning": CloudLightning,
+  "cloud-snow": CloudSnow,
+  "cloud-drizzle": CloudDrizzle
 };
-
 
 interface Forecast {
   high: number;
@@ -41,46 +43,34 @@ const Weather: React.FC<WeatherProps> = () => {
   const [address, setAddress] = useState('')
   const [currentWeather, setCurrentWeather] = useState<CurrentWeather | undefined>();
   const [forecast, setForecast] = useState<Forecast[] | undefined>();
-  const [cacheKeyExists, setCacheKeyExists] = useState<boolean>();
+  // const [cacheKeyExists, setCacheKeyExists] = useState<boolean>();
   const [iconName, setIconName] = useState<string>('cloud');
-  const [units, setUnits] = useState('imperial');
+  const [units, setUnits] = useState('');
   const [hideChangeLocation, setHideChangeLocation] = useState(true);
   const IconComponent = iconMap[iconName]; // Get the corresponding icon component
   const [loading, setLoading] = useState(true);
 
-  const getWeatherData = useCallback(async(location: string) => {
-    const response = await fetch(`https://bmepodrfarrqpcbl57nma67aay0fabwk.lambda-url.us-east-2.on.aws/?location=${location}&units=${units}`)
+  const getWeatherData = useCallback(async({location, ip, unitsOverride}: {location?: string; ip?: string, unitsOverride?: string}) => {
+    const params: URLSearchParams = new URLSearchParams();
+    if (location) params.append('location', location);
+    if (ip) params.append('ip', ip);
+    if (unitsOverride) params.append('units', unitsOverride)
+
+    const response = await fetch(`https://bmepodrfarrqpcbl57nma67aay0fabwk.lambda-url.us-east-2.on.aws/?${params.toString()}`)
     const json = await response.json()
 
+    setAddress(json?.current_weather?.city_name)
     setCurrentWeather(json['current_weather']);
-  }, [units]);
+    setIconName(json.current_weather.icon);
+    setUnits(json.units);
+  }, []);
 
   const getWeatherDataRef = useRef(getWeatherData); // Create a ref to hold the function
   useEffect(() => {
     getWeatherDataRef.current = getWeatherData; // Update the ref on change
   }, [getWeatherData]);
 
-  const addressRef = useRef(address); // Create a ref to hold the current address
   useEffect(() => {
-    addressRef.current = address; // Update the ref on address change
-  }, [address]);
-
-  useEffect(() => {
-    getWeatherDataRef.current(addressRef.current); // Update the ref on change
-  }, [units]);
-
-  useEffect(() => {
-    const getLocationByIP = async (ip: string) => {
-      const response = await fetch(`http://ip-api.com/json/${ip}`);
-      const data: {city: string, timezone: string} = await response.json();
-
-      if (!data.timezone.includes('America')) {
-        setUnits('metric');
-      }
-
-      return data.city;
-    };
-
     const getIpAddress = async () => {
       const response = await fetch('https://api.ipify.org?format=json')
       const data: {ip: string} = await response.json();
@@ -89,13 +79,10 @@ const Weather: React.FC<WeatherProps> = () => {
 
     const fetchLocation = async () => {
       const ip = await getIpAddress();
-      const location = await getLocationByIP(ip)
-
-      setAddress(location);
-      await getWeatherDataRef.current(location);
+      await getWeatherDataRef.current({ip: ip});
       setLoading(false);
     }
-    console.log('asdf')
+
     fetchLocation()
   }, []);
 
@@ -106,14 +93,12 @@ const Weather: React.FC<WeatherProps> = () => {
   }
 
   const handleUnitChange = () => {
-    setUnits(units === 'imperial' ? 'metric' : 'imperial')
+    getWeatherData({unitsOverride: units === 'imperial' ? 'metric' : 'imperial', location: address})
   }
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
-
-    setUnits('metric');
-    getWeatherData(address);
+    getWeatherData({location: address});
   };
 
   return (
@@ -124,8 +109,10 @@ const Weather: React.FC<WeatherProps> = () => {
             <div className="weather-overlay"></div>
             <div className="date-info">
               <span className="day-number">{new Date().toLocaleDateString('en-US', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' })}</span>
-              <MapPin className="city-icon" />
-              <span className="city">{currentWeather?.city_name}</span>
+              <Box display={'flex'} alignItems={'center'}>
+                <MapPin className="city-icon" />
+                <Text isTruncated className="city">{currentWeather?.city_name}</Text>
+              </Box>
               <Box
                 display={'flex'} gap={'1'} mt={'2'} fontSize={'xs'}
               >
@@ -133,12 +120,15 @@ const Weather: React.FC<WeatherProps> = () => {
                 <span className="value">Low: {currentWeather?.low}°</span>
               </Box>
             </div>
-            <Box className="weather-info" display={'flex'} flexDirection={'column'} alignItems={'center'}>
-              <IconComponent className="weather-icon" />
+            <Box className="weather-info" display={'flex'} flexDirection={'column'} alignItems={'end'}>
+              <Box display={'flex'} alignItems={'center'}>
+                <IconComponent className="weather-icon" />
+                {/* <Info onClick={() => alert()} size={'20'} style={{marginLeft: '1.5em', zIndex:9999}} /> */}
+              </Box>
               <h1 className="temperature">{currentWeather?.temperature}°<span>{ units === 'imperial' ? 'F' : 'C' }</span></h1>
               <Text isTruncated maxWidth={'125px'} className="weather-description">{currentWeather?.condition}</Text>
 
-              {cacheKeyExists && <span className="cache-badge">Served from Cache</span>}
+              {/* {cacheKeyExists && <span className="cache-badge">Served from Cache</span>} */}
             </Box>
           </div>
           <div className={`details-panel ${forecast ? "active" : "hide"}`}>
