@@ -150,7 +150,8 @@
       transition: all 0.3s ease; }
       .mobile-nav nav ul.main li:last-of-type {
         margin-bottom: 0px; }
-      .mobile-nav nav ul.main li a {
+      .mobile-nav nav ul.main li a, .mobile-nav nav ul.main li span {
+        cursor: pointer;
         color: #ffffff;
         font-family: "Raleway", sans-serif;
         text-decoration: none;
@@ -166,7 +167,7 @@
         transition: all 0.3s ease; }
         .mobile-nav nav ul.main li a span {
           color: #b7ac7f; }
-        .mobile-nav nav ul.main li a:hover {
+        .mobile-nav nav ul.main li a:hover, .mobile-nav nav ul.main li span:hover {
           color: #b7ac7f; }
   .mobile-nav nav .about {
     margin-top: 40px;

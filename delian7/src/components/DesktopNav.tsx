@@ -7,10 +7,11 @@ import { useEffect, useState } from "react";
 interface DesktopNavProps {
   socials: any;
   handleClick(event: React.MouseEvent<HTMLElement, MouseEvent>, section: string): void;
+  openResumeModal: () => void;
 }
 
-const DesktopNav: React.FC<DesktopNavProps> = ({socials, handleClick}) => {
-  const [isVisible, setIsVisible] = useState(true);
+const DesktopNav: React.FC<DesktopNavProps> = ({socials, handleClick, openResumeModal}) => {
+  // const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
@@ -18,11 +19,11 @@ const DesktopNav: React.FC<DesktopNavProps> = ({socials, handleClick}) => {
       const currentScrollY = window.scrollY;
 
       // Hide the header when scrolling down, show it when scrolling up
-      if (currentScrollY > lastScrollY) {
-        setIsVisible(false);
-      } else {
-        setIsVisible(true);
-      }
+      // if (currentScrollY > lastScrollY) {
+      //   setIsVisible(false);
+      // } else {
+      //   setIsVisible(true);
+      // }
 
       setLastScrollY(currentScrollY);
     };
@@ -63,6 +64,7 @@ const DesktopNav: React.FC<DesktopNavProps> = ({socials, handleClick}) => {
             </div>
             <div className="sections">
               <HStack spacing={8}>
+                <button onClick={(e) => {openResumeModal()}}>My Resume</button>
                 <button onClick={(e) => {handleClick(e, "timeline")}}>My Career</button>
                 <button onClick={(e) => {handleClick(e, "projects")}}>Projects</button>
                 <button onClick={(e) => {handleClick(e, "contactme")}}>Contact Me</button>

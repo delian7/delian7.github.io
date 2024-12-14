@@ -4,8 +4,10 @@ import {
   faLinkedin,
   faCodepen
 } from "@fortawesome/free-brands-svg-icons";
+import { useModalContext } from '../context/modalContext';
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
+import ResumeModalContent from "./ResumeModalContent";
 
 const socials = [
   {
@@ -31,6 +33,14 @@ const socials = [
 ];
 
 const Header = () => {
+  const { openModal, setModalContent, setModalTitle } = useModalContext();
+
+  const openResumeModal = () => {
+    setModalTitle('My Resume')
+    setModalContent(<ResumeModalContent />)
+    openModal()
+  }
+
   const handleClick = (e: React.MouseEvent<HTMLElement, MouseEvent>, anchor: string) => {
     e.preventDefault()
     const id = `${anchor}-section`;
@@ -45,8 +55,8 @@ const Header = () => {
 
   return (
     <>
-      <DesktopNav socials={socials} handleClick={handleClick}/>
-      <MobileNav socials={socials} handleClick={handleClick} />
+      <DesktopNav socials={socials} handleClick={handleClick} openResumeModal={openResumeModal} />
+      <MobileNav socials={socials} handleClick={handleClick} openResumeModal={openResumeModal} />
     </>
   );
 };

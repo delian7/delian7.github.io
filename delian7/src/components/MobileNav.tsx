@@ -6,9 +6,10 @@ import { Box, HStack } from '@chakra-ui/react';
 interface MobileNavProps {
   socials: any[];
   handleClick(event: React.MouseEvent<HTMLElement, MouseEvent>, section: string): void;
+  openResumeModal: () => void;
 }
 
-const MobileNav: React.FC<MobileNavProps> = ({socials, handleClick}) => {
+const MobileNav: React.FC<MobileNavProps> = ({socials, handleClick, openResumeModal}) => {
   const [showMenu, setShowMenu] = useState(false);
   const handleBurgerClick = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
     setShowMenu(!showMenu);
@@ -21,6 +22,7 @@ const MobileNav: React.FC<MobileNavProps> = ({socials, handleClick}) => {
       </div>
       <nav className={showMenu ? 'show' : ''}>
         <ul className="main">
+          <li><span onClick={openResumeModal}>Resume</span></li>
           <li><a href="#0" onClick={(e) => handleClick(e, "timeline")}>My Career</a></li>
           <li><a href="#0" onClick={(e) => handleClick(e, "projects")}>Projects</a></li>
           <li><a href="#0" onClick={(e) => handleClick(e, "contactme")}>Contact Me</a></li>
