@@ -3,6 +3,7 @@ import { Avatar, Box, Heading, VStack } from "@chakra-ui/react";
 import FullScreenSection from "./FullScreenSection";
 import delianAvatar from "../images/avatar.jpg";
 import Weather from "./Weather";
+import '../styles/avatar.css';
 
 const greeting = "Hello, I am Delian!";
 const bio1 = "a senior full stack developer";
@@ -20,7 +21,7 @@ const LandingSection = () => (
     w="100%"
   >
     <VStack spacing={3}>
-      <Avatar size="full" maxW={'60'} src={delianAvatar} />
+      <Avatar className="avatar" size="full" maxW={'60'} src={delianAvatar} />
       <Heading size="md" pb={8}>{greeting}</Heading>
       <Heading size="lg">{bio1}</Heading>
       <Heading size="lg">{bio2}</Heading>
