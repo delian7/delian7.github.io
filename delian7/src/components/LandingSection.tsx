@@ -13,6 +13,7 @@ const bio2 = "specialised in Ruby on Rails & React";
 // Use a combination of Avatar, Heading and VStack components.
 const LandingSection = () => (
   <FullScreenSection
+    className="landing"
     justifyContent="center"
     alignItems="center"
     isDarkBackground
@@ -20,12 +21,18 @@ const LandingSection = () => (
     position="relative"
     w="100%"
   >
-    <VStack spacing={3}>
-      <Avatar className="avatar" size="full" maxW={'60'} src={delianAvatar} />
-      <Heading size="md" pb={8}>{greeting}</Heading>
-      <Heading size="lg">{bio1}</Heading>
-      <Heading size="lg">{bio2}</Heading>
-    </VStack>
+    <Box className="profile-card">
+      <header>
+        <VStack spacing={3}>
+          <Avatar className="avatar" size="full" maxW={'60'} src={delianAvatar} />
+          <Box className="profile-bio">
+            <Heading size="md" pb={8}>{greeting}</Heading>
+            <Heading size="lg">{bio1}</Heading>
+            <Heading size="lg">{bio2}</Heading>
+          </Box>
+        </VStack>
+      </header>
+    </Box>
     <Box
       display={{base: 'none', md: 'block'}}
       top={{base: 0, md: '80px'}}
