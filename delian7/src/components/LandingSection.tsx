@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Avatar, Box, Heading, VStack } from "@chakra-ui/react";
 import FullScreenSection from "./FullScreenSection";
 import delianAvatar from "../images/avatar.jpg";
@@ -11,38 +11,53 @@ const bio2 = "specialised in Ruby on Rails & React";
 
 // Implement the UI for the LandingSection component according to the instructions.
 // Use a combination of Avatar, Heading and VStack components.
-const LandingSection = () => (
-  <FullScreenSection
-    className="landing"
-    justifyContent="center"
-    alignItems="center"
-    isDarkBackground
-    backgroundColor="#2A4365"
-    position="relative"
-    w="100%"
-  >
-    <Box className="profile-card">
-      <header>
-        <VStack spacing={3}>
-          <Avatar className="avatar" size="full" maxW={'60'} src={delianAvatar} />
-          <Box className="profile-bio">
-            <Heading size="md" pb={8}>{greeting}</Heading>
-            <Heading size="lg">{bio1}</Heading>
-            <Heading size="lg">{bio2}</Heading>
-          </Box>
-        </VStack>
-      </header>
-    </Box>
-    <Box
-      display={{base: 'none', md: 'block'}}
-      top={{base: 0, md: '80px'}}
-      marginTop={{base: '5em', md: 0}}
-      position={{base: 'relative', md: 'absolute'}}
-      right={{base: '0', md: '5'}}
+const LandingSection = () => {
+  // const weatherData = useWeather();
+  const [isWeatherVisible, setIsWeatherVisible] = useState(true);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsWeatherVisible(window.innerHeight >= 700);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  return (
+    <FullScreenSection
+      className="landing"
+      justifyContent="space-between"
+      alignItems="center"
+      isDarkBackground
+      backgroundColor="#2A4365"
+      position="relative"
+      w="100%"
+      flexDirection="column"
+      height="100vh"
     >
-      <Weather />
-    </Box>
-  </FullScreenSection>
-);
+      <Box className="profile-card" flex="0 1 auto">
+        <header>
+          <VStack spacing={3}>
+            <Avatar className="avatar" size="full" maxW={'60'} src={delianAvatar} />
+            <Box className="profile-bio">
+              <Heading size="md" pb={8}>{greeting}</Heading>
+              <Heading size="lg">{bio1}</Heading>
+              <Heading size="lg">{bio2}</Heading>
+            </Box>
+          </VStack>
+        </header>
+      </Box>
+      <Box flex="1" />
+      {isWeatherVisible && (
+        <Weather />
+      )}
+    </FullScreenSection>
+  );
+};
 
 export default LandingSection;
