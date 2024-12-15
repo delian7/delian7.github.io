@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.c9c4bcd1.css",
-    "main.js": "/static/js/main.09442cda.js",
+    "main.css": "/static/css/main.269b6737.css",
+    "main.js": "/static/js/main.a1281e2f.js",
     "static/js/453.fd0f5223.chunk.js": "/static/js/453.fd0f5223.chunk.js",
     "static/media/seastatus.mp4": "/static/media/seastatus.2d9fcdd59c40c7ff1a18.mp4",
     "static/media/hero.png": "/static/media/hero.d55f6f2dc5c303c8f6a1.png",
@@ -28,12 +28,12 @@
     "static/media/cryoport_logo.jpg": "/static/media/cryoport_logo.79cb78d6d27df7a8fc2f.jpg",
     "static/media/applab_logo.jpg": "/static/media/applab_logo.ce253169056316a9080b.jpg",
     "index.html": "/index.html",
-    "main.c9c4bcd1.css.map": "/static/css/main.c9c4bcd1.css.map",
-    "main.09442cda.js.map": "/static/js/main.09442cda.js.map",
+    "main.269b6737.css.map": "/static/css/main.269b6737.css.map",
+    "main.a1281e2f.js.map": "/static/js/main.a1281e2f.js.map",
     "453.fd0f5223.chunk.js.map": "/static/js/453.fd0f5223.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c9c4bcd1.css",
-    "static/js/main.09442cda.js"
+    "static/css/main.269b6737.css",
+    "static/js/main.a1281e2f.js"
   ]
 }
