@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import '../styles/Weather.css'
-import { Input, SlideFade } from "@chakra-ui/react";
-import { Icon, MapPin, Sun, Cloud, CloudRain, CloudLightning, CloudSnow, CloudDrizzle } from 'react-feather';
+import { Fade, Input, SlideFade } from "@chakra-ui/react";
+import { Icon, MapPin, Sun, Cloud, CloudRain, CloudLightning, CloudSnow, CloudDrizzle, Info } from 'react-feather';
 import { Box, Text } from '@chakra-ui/react'
 
 const iconMap: { [key: string]: Icon } = {
@@ -92,17 +92,19 @@ const Weather: React.FC<WeatherProps> = () => {
   }
 
   const handleUnitChange = () => {
+    setHideChangeLocation(true);
     getWeatherData({unitsOverride: units === 'imperial' ? 'metric' : 'imperial', location: address})
   }
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
+    setHideChangeLocation(true);
     getWeatherData({location: address});
   };
 
   return (
-    <>
-      <div className="wrapper" onMouseEnter={() => setHideChangeLocation(false)} onMouseLeave={() => setHideChangeLocation(true)}>
+    <Fade in={true} delay={3}>
+      <div className="wrapper">
         <span className={`weather-container ${currentWeather ? "active" : ""}`}>
           <div className="weather-panel">
             <div className="weather-overlay"></div>
@@ -122,12 +124,10 @@ const Weather: React.FC<WeatherProps> = () => {
             <Box className="weather-info" display={'flex'} flexDirection={'column'} alignItems={'end'}>
               <Box display={'flex'} alignItems={'center'}>
                 <IconComponent className="weather-icon" />
-                {/* <Info onClick={() => alert()} size={'20'} style={{marginLeft: '1.5em', zIndex:9999}} /> */}
+                <Info onClick={() => setHideChangeLocation(!hideChangeLocation)} size={'20'} style={{marginLeft: '1.5em'}} />
               </Box>
               <h1 className="temperature">{currentWeather?.temperature}°<span>{ units === 'imperial' ? 'F' : 'C' }</span></h1>
               <Text isTruncated maxWidth={'125px'} className="weather-description">{currentWeather?.condition}</Text>
-
-              {/* {cacheKeyExists && <span className="cache-badge">Served from Cache</span>} */}
             </Box>
           </div>
           <div className={`details-panel ${forecast ? "active" : "hide"}`}>
@@ -162,10 +162,9 @@ const Weather: React.FC<WeatherProps> = () => {
             </div>
           </div>
         </span>
-        <SlideFade in={!hideChangeLocation && !!currentWeather}>
+        <SlideFade style={{position: 'absolute', top: '-80px', width: '100%'}} in={!hideChangeLocation && !!currentWeather}>
             <Box
               className='location-selection'
-              width="100%"
               display={'flex'}
             >
               <button className="location-btn" onClick={() => showAddressInput()}>
@@ -186,7 +185,7 @@ const Weather: React.FC<WeatherProps> = () => {
           </form>
         </Box>
       </div>
-    </>
+    </Fade>
   );
 };
 
