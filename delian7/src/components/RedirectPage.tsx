@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router';
 import {useAlertContext} from "../context/alertContext";
+import { Box, Spinner } from '@chakra-ui/react';
 
 
 const RedirectPage = () => {
@@ -43,7 +44,15 @@ const RedirectPage = () => {
 
   return (
     <>
-      <p>Redirecting...</p>
+      <Box
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        minHeight="100vh"
+        background={'lavender'}
+      >
+        <Spinner size={'xl'}></Spinner>
+      </Box>
     </>
   )
 };
