@@ -18,7 +18,12 @@ const RedirectPage = () => {
           const data = await response.json();
 
           if (data.url) {
+            const title = name || 'Delian Petrov';
+            document.title = title
+            document.querySelector('meta[property="og:title"]')?.setAttribute('content', title);
+
             window.location.href = data.url; // Perform the redirect
+
           } else {
             navigate('/'); // Redirect to a 404 page if the name is not found
             onOpen("error", "The short link was not found")
