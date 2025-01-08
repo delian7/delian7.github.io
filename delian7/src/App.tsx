@@ -26,23 +26,29 @@ const HomePage = () => {
   )
 }
 
+function AppContent() {
+  return (
+    <ChakraProvider>
+      <AlertProvider>
+        <ModalProvider>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/seastatus" element={<SeastatusModalContent />} />
+            <Route path="/:name" element={<RedirectPage />} />
+            <Route path="*" element={<HomePage />} />
+          </Routes>
+        </ModalProvider>
+      </AlertProvider>
+    </ChakraProvider>
+  );
+}
+
 function App() {
   return (
     <HashRouter>
-      <ChakraProvider>
-        <AlertProvider>
-          <ModalProvider>
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/seastatus" element={<SeastatusModalContent />} />
-              <Route path="/:name" element={<RedirectPage />} />
-              <Route path="*" element={<HomePage />} />
-            </Routes>
-          </ModalProvider>
-        </AlertProvider>
-      </ChakraProvider>
+      <AppContent />
     </HashRouter>
-  );
+  )
 }
 
 export default App;
