@@ -3,7 +3,7 @@ import { Avatar, Box, Heading, VStack } from "@chakra-ui/react";
 import FullScreenSection from "./FullScreenSection";
 import delianAvatar from "../images/avatar.jpg";
 import Weather from "./Weather";
-// import '../styles/avatar.css';
+import '../styles/avatar.css';
 import ProfileCard from "./ProfileCard";
 
 const greeting = "Hello, I am Delian!";
@@ -41,20 +41,20 @@ const LandingSection = () => {
       flexDirection="column"
       height="100vh"
     >
-      <ProfileCard />
-      {/* <Box className="profile-card" flex="0 1 auto">
+      <Box className="profile-card" flex="0 1 auto">
         <header>
-          <VStack spacing={3}>
-            <Avatar className="avatar" size="full" maxW={'60'} src={delianAvatar} />
-            <Box className="profile-bio">
+            <ProfileCard />
+          {/* <VStack spacing={3}> */}
+            {/* <Avatar className="avatar" size="full" maxW={'60'} src={delianAvatar} /> */}
+            {/* <Box className="profile-bio">
               <Heading size="md" pb={8}>{greeting}</Heading>
               <Heading size="lg">{bio1}</Heading>
               <Heading size="lg">{bio2}</Heading>
-            </Box>
-          </VStack>
+            </Box> */}
+          {/* </VStack> */}
         </header>
-      </Box> */}
-      <Box flex="1" />
+      </Box>
+      <Box zIndex={99} flex="1" />
       {isWeatherVisible && (
         <Weather />
       )}
