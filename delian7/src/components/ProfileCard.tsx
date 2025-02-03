@@ -40,21 +40,21 @@ const ProfileCard = () => {
   const socialLinks = [
     {
       icon: FaLinkedin,
-      href: 'https://linkedin.com/in/delianpetrov',
+      href: 'https://www.linkedin.com/in/delianpetrov',
       label: 'LinkedIn',
       gradient: 'linear-gradient(45deg, #1da1f2,#0e71c8)',
       shadow: '0px 4px 30px rgba(19, 127, 212, 0.7)'
     },
     {
       icon: FaGithub,
-      href: 'https://github.com/delian',
+      href: 'https://github.com/delian7',
       label: 'GitHub',
       gradient: 'linear-gradient(45deg, #333333, #626b73)',
       shadow: '0px 4px 30px rgba(63, 65, 67, 0.6)'
     },
     {
       icon: FaCodepen,
-      href: 'https://codepen.io/delian',
+      href: 'https://codepen.io/delian7',
       label: 'CodePen',
       gradient: 'linear-gradient(45deg, #324e63, #414447)',
       shadow: '0px 4px 30px rgba(55, 75, 90, 0.6)'
