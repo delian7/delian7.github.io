@@ -221,7 +221,7 @@ const ProfileCard = () => {
                 onClick={handleSmoothScroll}
                 px={10}
                 py={7}
-                minW="150px"
+                minW="175px"
                 borderRadius="50px"
                 fontSize="19px"
                 fontWeight="700"
