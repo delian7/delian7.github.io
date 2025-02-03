@@ -14,6 +14,7 @@ import {
   StatLabel,
   SimpleGrid,
   Flex,
+  Stack,
 } from '@chakra-ui/react';
 import { FaGithub, FaLinkedin, FaCodepen, FaMapMarkerAlt } from 'react-icons/fa';
 import delianAvatar from "../images/avatar.jpg";
@@ -161,9 +162,9 @@ const ProfileCard = () => {
               <Text>San Diego, California</Text>
             </HStack>
 
-            <SimpleGrid columns={3} spacing={2} w="full" mt={8}>
+            <SimpleGrid columns={3} spacing={[0,2]} w="full" mt={8}>
               {stats.map((stat) => (
-                <Stat key={stat.label} textAlign="center" px={10}>
+                <Stat key={stat.label} textAlign="center" px={[0,10]}>
                   <StatNumber
                     fontSize="27px"
                     fontWeight="700"
@@ -208,13 +209,19 @@ const ProfileCard = () => {
               ))}
             </HStack>
 
-            <HStack spacing={8} mt={8} w="full" justifyContent="center">
+            <Stack
+              direction={['column', 'row']}
+              spacing={4}
+              mt={8}
+              w="full"
+              justifyContent="center"
+            >
               <Button
                 id="#contactme-section"
                 onClick={handleSmoothScroll}
                 px={10}
                 py={7}
-                minW="201px"
+                minW="150px"
                 borderRadius="50px"
                 fontSize="19px"
                 fontWeight="700"
@@ -248,7 +255,7 @@ const ProfileCard = () => {
               >
                 Download Resume
               </Button>
-            </HStack>
+            </Stack>
           </VStack>
         </VStack>
       </Box>
