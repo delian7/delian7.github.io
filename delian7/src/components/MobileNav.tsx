@@ -2,15 +2,16 @@ import { useState } from 'react'
 import '../styles/MobileNav.css'
 import SocialList from './SocialList';
 import { Box, HStack } from '@chakra-ui/react';
+import { useScroll } from '../context/ScrollContext';
 
 interface MobileNavProps {
   socials: any[];
-  handleClick(event: React.MouseEvent<HTMLElement, MouseEvent>, section: string): void;
   openResumeModal: () => void;
 }
 
-const MobileNav: React.FC<MobileNavProps> = ({socials, handleClick, openResumeModal}) => {
+const MobileNav: React.FC<MobileNavProps> = ({socials, openResumeModal}) => {
   const [showMenu, setShowMenu] = useState(false);
+  const handleSmoothScroll = useScroll();
   const handleBurgerClick = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
     setShowMenu(!showMenu);
   }
@@ -23,9 +24,9 @@ const MobileNav: React.FC<MobileNavProps> = ({socials, handleClick, openResumeMo
       <nav className={showMenu ? 'show' : ''}>
         <ul className="main">
           <li><span onClick={openResumeModal}>Resume</span></li>
-          <li><a href="#0" onClick={(e) => handleClick(e, "timeline")}>My Career</a></li>
-          <li><a href="#0" onClick={(e) => handleClick(e, "projects")}>Projects</a></li>
-          <li><a href="#0" onClick={(e) => handleClick(e, "contactme")}>Contact Me</a></li>
+          <li><span id="#timeline-section">My Career</span></li>
+          <li><span id="#projects-section" onClick={handleSmoothScroll}>Projects</span></li>
+          <li><span id="#contactme-section" onClick={handleSmoothScroll}>Contact Me</span></li>
         </ul>
 
         <HStack

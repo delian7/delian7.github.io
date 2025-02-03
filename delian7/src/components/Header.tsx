@@ -41,22 +41,10 @@ const Header = () => {
     openModal()
   }
 
-  const handleClick = (e: React.MouseEvent<HTMLElement, MouseEvent>, anchor: string) => {
-    e.preventDefault()
-    const id = `${anchor}-section`;
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  };
-
   return (
     <>
-      <DesktopNav socials={socials} handleClick={handleClick} openResumeModal={openResumeModal} />
-      <MobileNav socials={socials} handleClick={handleClick} openResumeModal={openResumeModal} />
+      <DesktopNav socials={socials} openResumeModal={openResumeModal} />
+      <MobileNav socials={socials} openResumeModal={openResumeModal} />
     </>
   );
 };

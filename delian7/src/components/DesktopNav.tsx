@@ -3,16 +3,17 @@ import { HStack } from "@chakra-ui/react";
 import { Box } from "@chakra-ui/react";
 import SocialList from "./SocialList";
 import { useEffect, useState } from "react";
+import { useScroll } from '../context/ScrollContext';
 
 interface DesktopNavProps {
   socials: any;
-  handleClick(event: React.MouseEvent<HTMLElement, MouseEvent>, section: string): void;
   openResumeModal: () => void;
 }
 
-const DesktopNav: React.FC<DesktopNavProps> = ({socials, handleClick, openResumeModal}) => {
+const DesktopNav: React.FC<DesktopNavProps> = ({socials, openResumeModal}) => {
   // const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const handleSmoothScroll = useScroll();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,9 +66,9 @@ const DesktopNav: React.FC<DesktopNavProps> = ({socials, handleClick, openResume
             <div className="sections">
               <HStack spacing={8}>
                 <button onClick={(e) => {openResumeModal()}}>My Resume</button>
-                <button onClick={(e) => {handleClick(e, "timeline")}}>My Career</button>
-                <button onClick={(e) => {handleClick(e, "projects")}}>Projects</button>
-                <button onClick={(e) => {handleClick(e, "contactme")}}>Contact Me</button>
+                <button id="#timeline-section" onClick={handleSmoothScroll}>My Career</button>
+                <button id="#projects-section" onClick={handleSmoothScroll}>Projects</button>
+                <button id="#contactme-section" onClick={handleSmoothScroll}>Contact Me</button>
               </HStack>
             </div>
           </HStack>
