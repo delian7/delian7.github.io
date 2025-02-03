@@ -12,6 +12,7 @@ import RedirectPage from "./components/RedirectPage";
 import SeastatusModalContent from "./components/SeastatusModalContent";
 import { ModalProvider } from "./context/modalContext";
 import { ScrollProvider } from './context/ScrollContext';
+import BackToTopButton from "./components/BackToTopButton";
 
 const HomePage = () => {
   return (
@@ -22,6 +23,7 @@ const HomePage = () => {
       <Timeline />
       <ContactMeSection />
       <Footer />
+      <BackToTopButton />
       <Alert />
     </main>
   )
