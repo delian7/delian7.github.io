@@ -1,3 +1,5 @@
+import { useModalContext } from '../context/modalContext';
+import ResumeModalContent from './ResumeModalContent';
 import {
   Box,
   VStack,
@@ -15,13 +17,24 @@ import {
 } from '@chakra-ui/react';
 import { FaGithub, FaLinkedin, FaCodepen, FaMapMarkerAlt } from 'react-icons/fa';
 import delianAvatar from "../images/avatar.jpg";
+import { useScroll } from '../context/ScrollContext';
 
 const ProfileCard = () => {
+  const { openModal, setModalContent, setModalTitle } = useModalContext();
+
+  // const [commitCount, setCommitCount] = useState(0);
+  const handleSmoothScroll = useScroll();
+  const openResumeModal = () => {
+    setModalTitle('My Resume')
+    setModalContent(<ResumeModalContent />)
+    openModal()
+  }
+
   const stats = [
-    { label: 'Projects', value: '85+' },
-    { label: 'Experience', value: '10y+' },
-    { label: 'Countries', value: '3' },
-    { label: 'Languages', value: '4' },
+    // { label: '# of commits', value: commitCount },
+    { label: 'Experience', value: '11y+' },
+    { label: 'Programming Languages', value: '7' },
+    { label: 'Spoken Languages', value: '3'}
   ];
 
   const socialLinks = [
@@ -48,9 +61,42 @@ const ProfileCard = () => {
     },
   ];
 
+  // async function getCommitCount(username: string) {
+  //   const url = `https://api.github.com/users/${username}/repos`;
+
+  //   try {
+  //     const response = await fetch(url);
+  //     const repos = await response.json();
+
+  //     let commitCount = 0;
+
+  //     debugger;
+
+  //     // Loop through each repository to get the commit count
+  //     for (const repo of repos) {
+  //       const commitsUrl = `https://api.github.com/repos/${username}/${repo.name}/commits`;
+  //       const commitsResponse = await fetch(commitsUrl);
+  //       const commits = await commitsResponse.json();
+  //       commitCount += commits.length; // Add the number of commits for this repo
+  //     }
+
+  //     return commitCount;
+  //   } catch (error) {
+  //     console.error('Error fetching commit count:', error);
+  //     return null;
+  //   }
+  // }
+
+  // useEffect(() => {
+  //   getCommitCount('delian7').then(count => {
+  //     if (count) {
+  //       setCommitCount(count);
+  //     }
+  //   });
+  // }, [])
+
   return (
     <Flex
-      w="100%"
       minH="100vh"
       align="center"
       justify="center"
@@ -115,7 +161,7 @@ const ProfileCard = () => {
               <Text>San Diego, California</Text>
             </HStack>
 
-            <SimpleGrid columns={4} spacing={4} w="full" mt={8}>
+            <SimpleGrid columns={3} spacing={2} w="full" mt={8}>
               {stats.map((stat) => (
                 <Stat key={stat.label} textAlign="center" px={10}>
                   <StatNumber
@@ -129,6 +175,7 @@ const ProfileCard = () => {
                     fontSize="16px"
                     fontWeight="500"
                     mt={2}
+                    color="#324e63"
                   >
                     {stat.label}
                   </StatLabel>
@@ -163,8 +210,8 @@ const ProfileCard = () => {
 
             <HStack spacing={8} mt={8} w="full" justifyContent="center">
               <Button
-                as="a"
-                href="#contact-me"
+                id="#contactme-section"
+                onClick={handleSmoothScroll}
                 px={10}
                 py={7}
                 minW="201px"
@@ -188,6 +235,7 @@ const ProfileCard = () => {
                 minW="201px"
                 borderRadius="50px"
                 fontSize="19px"
+                onClick={openResumeModal}
                 fontWeight="700"
                 color="white"
                 bgGradient="linear-gradient(45deg, #d5135a, #f05924)"

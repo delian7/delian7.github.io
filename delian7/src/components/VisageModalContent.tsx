@@ -1,4 +1,3 @@
-import PhoneFrame from './PhoneFrame';
 import hero from '../images/visage/hero.png';
 import visage from '../images/visage/visage-templates.png';
 import visageColors from '../images/visage/visage-colors.png';
@@ -7,8 +6,6 @@ import { Box, Img } from '@chakra-ui/react';
 import MacbookFrame from './MacbookFrame';
 
 const VisageModalContent = () => {
-    const seastatus = require('../images/seastatus/seastatus.mp4');
-
     return (
       <div className="modal">
         <div className="modal-content">

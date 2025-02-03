@@ -30,7 +30,7 @@ const LandingSection = () => {
 
   return (
     <FullScreenSection
-      backgroundColor="#512DA8"
+      backgroundColor="#2A4365"
       isDarkBackground
       p={8}
       alignItems="flex-start"
