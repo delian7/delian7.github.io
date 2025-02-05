@@ -1,3 +1,4 @@
+import { Box } from "@chakra-ui/react";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
   faGithub,
@@ -44,7 +45,9 @@ const Header = () => {
   return (
     <>
       <DesktopNav socials={socials} openResumeModal={openResumeModal} />
-      <MobileNav socials={socials} openResumeModal={openResumeModal} />
+      <Box display={{base: 'block', md: 'none'}}>
+        <MobileNav socials={socials} openResumeModal={openResumeModal} />
+      </Box>
     </>
   );
 };
