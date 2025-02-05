@@ -6,15 +6,16 @@
 	animation: float 6s ease-in-out infinite;
 }
 
-@media screen and (max-height: 850px) {
+/* @media screen and (max-height: 850px) {
   .profile-card header {
     padding: 7em 0;
   }
-}
+} */
 
-@media screen and (max-height: 700px) {
-  .profile-card header {
-    padding: 8em 0;
+@media screen and (max-height: 850px) {
+  .landing {
+    height: 140vh !important;
+    background-image: linear-gradient(-20deg, #ff2846 0%, #6944ff 100%) !important;
   }
 }
 
