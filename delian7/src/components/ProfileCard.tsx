@@ -33,7 +33,7 @@ const ProfileCard = () => {
 
   const stats = [
     // { label: '# of commits', value: commitCount },
-    { label: 'Experience', value: '11y+' },
+    { label: 'Professional Experience', value: '11y+' },
     { label: 'Programming Languages', value: '7' },
     { label: 'Spoken Languages', value: '3'}
   ];
