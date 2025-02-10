@@ -19,9 +19,13 @@
   }
 }
 
-@media screen and (orientation: landscape) {
+@media screen and (max-height: 850px) and (orientation: landscape) {
   .profile-card {
     padding: 8em 0;
+  }
+
+  .landing {
+    overflow: auto !important;
   }
 }
 
