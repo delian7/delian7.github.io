@@ -57,7 +57,6 @@ const FridgeGuideModalContent = () => {
 
               <h2>Success</h2>
               <p>
-                FridgeGuide Ai has achieved significant success, earning a $1.5 million investment.
                 Its user-friendly design and AI tools transform grocery management,
                 contributing to global efforts aligned with the UN Sustainable Development Goals.
               </p>
