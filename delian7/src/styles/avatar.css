@@ -6,12 +6,6 @@
 	animation: float 6s ease-in-out infinite;
 }
 
-/* @media screen and (max-height: 850px) {
-  .profile-card header {
-    padding: 7em 0;
-  }
-} */
-
 @media screen and (max-height: 850px) {
   .landing {
     /* height: 140vh !important; */
@@ -25,7 +19,8 @@
   }
 
   .landing {
-    overflow: auto !important;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 }
 
