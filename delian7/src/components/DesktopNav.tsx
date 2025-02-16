@@ -11,7 +11,7 @@ interface DesktopNavProps {
 }
 
 const DesktopNav: React.FC<DesktopNavProps> = ({socials, openResumeModal}) => {
-  // const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const handleSmoothScroll = useScroll();
 
@@ -20,11 +20,11 @@ const DesktopNav: React.FC<DesktopNavProps> = ({socials, openResumeModal}) => {
       const currentScrollY = window.scrollY;
 
       // Hide the header when scrolling down, show it when scrolling up
-      // if (currentScrollY > lastScrollY) {
-      //   setIsVisible(false);
-      // } else {
-      //   setIsVisible(true);
-      // }
+      if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
 
       setLastScrollY(currentScrollY);
     };
@@ -43,7 +43,7 @@ const DesktopNav: React.FC<DesktopNavProps> = ({socials, openResumeModal}) => {
       top={0}
       left={0}
       right={0}
-      // transform={isVisible ? "translateY(0)" : "translateY(-80px)"}
+      transform={isVisible ? "translateY(0)" : "translateY(-80px)"}
       transitionProperty="transform"
       transitionDuration=".3s"
       transitionTimingFunction="ease-in-out"
