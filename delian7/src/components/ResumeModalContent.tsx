@@ -8,7 +8,7 @@ const ResumeModalContent = () => {
       <Box height="900px" display={'flex'} flexDirection={'column'}>
         <Box color={'green.400'} marginY={'8'} display={'flex'} justifyContent={'space-evenly'}>
           <Button colorScheme="blue" variant='solid'>
-            <a target="_blank" rel="noreferrer" href={`https://drive.google.com/file/d/${pdfID}/preview`}>Download in PDF</a>
+            <a target="_blank" rel="noreferrer" href={`https://drive.google.com/uc?export=download&id=${pdfID}`}>Download in PDF</a>
           </Button>
           <Button colorScheme="blue" variant='solid'>
             <a target="_blank" rel="noreferrer" href={`https://drive.google.com/uc?export=download&id=${docxID}`}>Download in DOCX</a>
