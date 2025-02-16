@@ -24,7 +24,7 @@ const MobileNav: React.FC<MobileNavProps> = ({socials, openResumeModal}) => {
       <nav className={showMenu ? 'show' : ''}>
         <ul className="main">
           <li><span onClick={openResumeModal}>Resume</span></li>
-          <li><span id="#timeline-section">My Career</span></li>
+          <li><span id="#timeline-section" onClick={handleSmoothScroll}>My Career</span></li>
           <li><span id="#projects-section" onClick={handleSmoothScroll}>Projects</span></li>
           <li><span id="#contactme-section" onClick={handleSmoothScroll}>Contact Me</span></li>
         </ul>
