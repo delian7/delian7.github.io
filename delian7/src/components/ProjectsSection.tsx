@@ -8,6 +8,7 @@ import SeastatusModalContent from "./SeastatusModalContent";
 import FridgeGuideModalContent from "./FridgeGuideModalContent";
 import MetroGroupModalContent from "./MetroGroupModalContent";
 import VisageModalContent from "./VisageModalContent";
+import WanderfultanzaniaContent from "./WanderfulTanzaniaContent";
 
 interface Project {
   title: string;
@@ -18,6 +19,13 @@ interface Project {
 }
 
 const projects: Project[] = [
+  {
+    title: "Software Develompent Consultant",
+    description: "Empowering Wanderful Tanzania Safaris Through Innovative Software Solutions",
+    logo: () => require("../images/wanderfultanzania/logo.png"),
+    hero: () => require("../images/wanderfultanzania/hero.png"),
+    modalContent: <WanderfultanzaniaContent />
+  },
   {
     title: "FridgeGuide Ai",
     description:
