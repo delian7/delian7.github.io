@@ -2,7 +2,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import Header from "./components/Header";
 import LandingSection from "./components/LandingSection";
 import ProjectsSection from "./components/ProjectsSection";
-import { Route, Routes, HashRouter } from 'react-router-dom';
+import { Route, Routes, BrowserRouter } from 'react-router';
 import ContactMeSection from "./components/ContactMeSection";
 import Timeline from "./components/Timeline";
 import Footer from "./components/Footer";
@@ -50,9 +50,9 @@ function AppContent() {
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <AppContent />
-    </HashRouter>
+    </BrowserRouter>
   )
 }
 
