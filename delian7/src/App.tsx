@@ -13,6 +13,7 @@ import SeastatusModalContent from "./components/SeastatusModalContent";
 import { ModalProvider } from "./context/modalContext";
 import { ScrollProvider } from './context/ScrollContext';
 import BackToTopButton from "./components/BackToTopButton";
+import NotionPage from "./components/NotionPage";
 
 const HomePage = () => {
   return (
@@ -38,6 +39,7 @@ function AppContent() {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/seastatus" element={<SeastatusModalContent />} />
+              <Route path="/notion" element={<NotionPage pageId="067dd719a912471ea9a3ac10710e7fdf"/>} />
               <Route path="/:name" element={<RedirectPage />} />
               <Route path="*" element={<HomePage />} />
             </Routes>
