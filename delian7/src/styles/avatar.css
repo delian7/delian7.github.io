@@ -95,9 +95,6 @@
 }
 
 @keyframes materia {
-  0% {
-    background: #2A4365;
-  }
   50% {
     border-radius: 4px;
   }
