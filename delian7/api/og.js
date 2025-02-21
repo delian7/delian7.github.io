@@ -29,5 +29,10 @@ export default async function handler(req, res) {
 async function fetchNotionMetadata(name) {
   const response = await fetch(`https://qpqyy5wg42qcon34ph6mhljct40wtmpl.lambda-url.us-east-2.on.aws/?name=${name}`)
   const data = await response.json();
-  return data || null;
+
+  if (!data["url"]) {
+    return null;
+  }
+
+  return data;
 }
