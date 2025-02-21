@@ -44,7 +44,6 @@ export default async function handler(req, res) {
     </head>
     <body>
       <div class="spinner"></div>
-      <script>window.location.href = "${notionData.url || '/'}";</script>
     </body>
     </html>
   `);
