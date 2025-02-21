@@ -1,14 +1,5 @@
 {
   "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/api/og?name=$1",
-      "has": [
-        {
-          "type": "host",
-          "value": "^(?!/seastatus|/name|/)$"
-        }
-      ]
-    }
+    { "source": "/api/(.*)", "destination": "/api/og?name=$1" }
   ]
 }
