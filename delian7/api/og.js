@@ -31,8 +31,8 @@ async function fetchNotionMetadata(path) {
     "resume": {
       title: "Delian Petrov's Resume",
       description: "Check out Delian Petrov’s professional resume.",
-      image: "https://example.com/resume-image.jpg",
-      url: "https://notion.so/delianpetrov-resume"
+      image: "https://delianpetrov.com/avatar.jpg",
+      url: "https://drive.google.com/file/d/1xl2LsWDi7Soc18Jh-fdSg49eDg39NkPA/view"
     }
   };
 
