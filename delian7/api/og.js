@@ -5,8 +5,9 @@ export default async function handler(req, res) {
   const notionData = await fetchNotionMetadata(name);
 
   if (!notionData) {
-    return res.status(404).send("Not Found");
-
+    return res.end(`
+      <script>window.location.href = '/'</script>
+    `)
   }
 
   res.setHeader("Content-Type", "text/html");
