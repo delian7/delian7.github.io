@@ -6,6 +6,7 @@ export default async function handler(req, res) {
 
   if (!notionData) {
     return res.status(404).send("Not Found");
+
   }
 
   res.setHeader("Content-Type", "text/html");
@@ -42,7 +43,7 @@ export default async function handler(req, res) {
     </head>
     <body>
       <div class="spinner"></div>
-      <script>window.location.href = "${notionData.url}";</script>
+      <script>window.location.href = "${notionData.url || '/'}";</script>
     </body>
     </html>
   `);
