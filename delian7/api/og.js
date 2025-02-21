@@ -27,23 +27,7 @@ export default async function handler(req, res) {
 
 // Function to simulate fetching metadata from Notion (replace with API call)
 async function fetchNotionMetadata(name) {
-  const notionDatabase = {
-    "resume": {
-      title: "Delian Petrov's Resume",
-      description: "Check out Delian Petrov’s professional resume.",
-      image: "https://delianpetrov.com/avatar.jpg",
-      url: "/"
-    }
-  };
-
   const response = await fetch(`https://qpqyy5wg42qcon34ph6mhljct40wtmpl.lambda-url.us-east-2.on.aws/?name=${name}`)
   const data = await response.json();
   return data || null;
-
-  // if (response.ok) {
-
-  //   if (data.url) {
-  //     notionDatabase[name]["url"] = data.url;
-  //   }
-  // }
 }
