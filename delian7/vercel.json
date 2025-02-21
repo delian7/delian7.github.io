@@ -1,12 +1,9 @@
 {
+  "version": 2,
   "rewrites": [
     {
-      "source": "/api/:name",
-      "destination": "/api/og?name=:name"
-    },
-    {
-      "source": "/api/seastatus",
-      "destination": "/seastatus"
+      "source": "/((?!seastatus|another-route|_next|static|favicon.ico).*)",
+      "destination": "/api/og?name=$1"
     }
   ]
 }
