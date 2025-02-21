@@ -17,8 +17,31 @@ export default async function handler(req, res) {
       <meta property="og:description" content="${notionData.description}" />
       <meta property="og:image" content="${notionData.image}" />
       <meta http-equiv="refresh" content="0;url=${notionData.url}" />
+      <style>
+        body {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;
+          background: lavender;
+          margin: 0;
+        }
+        .spinner {
+          width: 80px;
+          height: 80px;
+          border: 10px solid rgba(0, 0, 0, 0.1);
+          border-top: 10px solid #3498db;
+          border-radius: 50%;
+          animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+      </style>
     </head>
     <body>
+      <div class="spinner"></div>
       <script>window.location.href = "${notionData.url}";</script>
     </body>
     </html>
