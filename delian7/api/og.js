@@ -1,8 +1,8 @@
 export default async function handler(req, res) {
-  const { path } = req.query;
+  const { name } = req.query;
 
   // Fetch metadata from Notion
-  const notionData = await fetchNotionMetadata(path);
+  const notionData = await fetchNotionMetadata(name);
 
   if (!notionData) {
     return res.status(404).send("Not Found");
@@ -26,15 +26,25 @@ export default async function handler(req, res) {
 }
 
 // Function to simulate fetching metadata from Notion (replace with API call)
-async function fetchNotionMetadata(path) {
+async function fetchNotionMetadata(name) {
   const notionDatabase = {
     "resume": {
       title: "Delian Petrov's Resume",
       description: "Check out Delian Petrov’s professional resume.",
       image: "https://delianpetrov.com/avatar.jpg",
-      url: "https://drive.google.com/file/d/1xl2LsWDi7Soc18Jh-fdSg49eDg39NkPA/view"
+      url: "/"
     }
   };
 
-  return notionDatabase[path] || null;
+  const response = await fetch(`https://qpqyy5wg42qcon34ph6mhljct40wtmpl.lambda-url.us-east-2.on.aws/?name=${name}`)
+
+  if (response.ok) {
+    const data = await response.json();
+
+    if (data.url) {
+      notionDatabase[name]["url"] = data.url;
+    }
+  }
+
+  return notionDatabase[name] || null;
 }
