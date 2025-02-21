@@ -1,11 +1,11 @@
 {
   "rewrites": [
     {
-      "source": "/:name",
+      "source": "/api/:name",
       "destination": "/api/og?name=:name"
     },
     {
-      "source": "/seastatus",
+      "source": "/api/seastatus",
       "destination": "/seastatus"
     }
   ]
