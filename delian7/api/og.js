@@ -10,13 +10,15 @@ export default async function handler(req, res) {
     `)
   }
 
+  const description = notionData.description || "Redirecting you to a different page...";
+
   res.setHeader("Content-Type", "text/html");
   res.end(`
     <!DOCTYPE html>
     <html lang="en">
     <head>
       <meta property="og:title" content="${notionData.title}" />
-      <meta property="og:description" content="${notionData.description}" />
+      <meta property="og:description" content="${description}" />
       <meta property="og:image" content="${notionData.image}" />
       <meta http-equiv="refresh" content="0;url=${notionData.url}" />
       <style>
