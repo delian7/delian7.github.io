@@ -159,7 +159,7 @@ const ProfileCard = () => {
               color="#324e63"
             >
               <Icon as={FaMapMarkerAlt} fontSize="27px" mr={2} />
-              <Text>San Diego, California</Text>
+              <Text>Seattle, Washington</Text>
             </HStack>
 
             <SimpleGrid columns={3} spacing={[0,2]} w="full" mt={8}>
