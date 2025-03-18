@@ -1,0 +1,310 @@
+%-------------------------
+% Resume in Latex
+% Author : Delian Petrov
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,12pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage{multicol}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{1pt}}
+  }
+}
+
+\newcommand{\classesList}[4]{
+    \item\small{
+        {#1 #2 #3 #4 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{4pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+\begin{center}
+    {\Huge \scshape Delian Petrov} \\ \vspace{8pt}
+    \small \raisebox{-0.1\height}\faMapPin\ Seattle, WA
+    % \small \raisebox{-0.1\height}\faPhone\ 858-203-8510
+    ~ \href{mailto:delian7@gmail.com}{\raisebox{-0.2\height}\faEnvelope\  \underline{delian7@gmail.com}} ~
+    \href{https://www.linkedin.com/in/delianpetrov/}{\raisebox{-0.2\height}\faLinkedin\ \underline{linkedin.com/in/delianpetrov}}  ~
+    \href{https://github.com/delian7}{\raisebox{-0.2\height}\faGithub\ \underline{github.com/delian7}} \\ \vspace{16pt}
+    {\Large \scshape Senior Software Engineer with 10+ years experience}
+    \vspace{-8pt}
+\end{center}
+
+%-----------Blurb-----------
+\begin{center}
+\vspace{8pt}
+Highly experienced in scalable back-end systems and distributed architectures who leads transformations by enhancing features, mentoring teammates, and collaborating cross-functionally. Proven track record in designing and implementing high-performance back-end solutions that handle millions of requests while maintaining subsecond response times. Expertise in API design, database optimization, and building resilient distributed systems that support business-critical operations. Strong technical leader who excels at optimizing system performance, mentoring teammates, and collaborating cross-functionally to deliver robust back-end solutions.
+\end{center}
+
+%-----------Core Competencies-----------
+% \section{Core Competencies}
+%  \begin{itemize}[leftmargin=0.15in, label={}]
+%     \begin{multicols}{3}
+%     \begin{itemize}
+%         \item System Architecture
+%         \item Item 2
+%         \item Item 3
+%         \item Item 4
+%         \item Item 5
+%         \item Item 6
+%         \item Item 7
+%         \item Item 8
+%         \item Item 9
+%     \end{itemize}
+%     \end{multicols}
+%  \end{itemize}
+%  \vspace{-16pt}
+
+\section{Core Competencies}
+\begin{multicols}{3}
+\begin{itemize}
+    \item System Architecture
+    \item Data Structures
+    \item Testing \& Debugging
+    \item Requirement Specifications
+    \item Database Management
+    \item Cross-Functional Collaboration
+    \item Relationship Management
+    \item Strategic Planning
+    \item Cloud Computing
+    \item Performance Tuning
+    \item Technical Leadership
+    \item Risk Management
+\end{itemize}
+\end{multicols}
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Ruby on Rails, React, Javascript, Typescript, Tailwind CSS, Angular, HTML/CSS, JavaScript, SQL} \\
+     \textbf{Developer Tools}{: AWS, Azure, Google Cloud Platform, CircleCI, Jira, ChatGPT API} \\
+     \textbf{Frameworks/Principles}{: API Design, Microservices, Agile, Test Driven Development (TDD)} \\
+    }}
+ \end{itemize}
+ \vspace{-16pt}
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {FridgeGuide Ai}{2024 - 2025}
+      {Senior Software Engineer}{}
+      \resumeItemListStart
+        \resumeItem{Designed and optimized RESTful APIs supporting real-time data streaming, reducing response latency by 80\% through implementation of Redis caching.}
+        \resumeItem{Architected scalable backend microservices using Ruby on Rails, handling 100K+ daily requests with 99.9\% uptime.}
+        \resumeItem{Developed and tested custom AI prompts to accurately identify common grocery items and expiration dates, achieving a 95\% success rate in identifying and categorizing groceries, streamlining the user process and improving accuracy.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {SalonInteractive}{2022-2024}
+      {Senior Software Engineer}{}
+      \resumeItemListStart
+        \resumeItem{Led end-to-end development, performance optimization, and infrastructure scaling of mission-critical systems for a \$1.2M business software solution company, improving application response times by 60\%.}
+        \resumeItem{Transitioned infrastructure from Google Cloud to Heroku, conducting load testing, reducing average response times by 25\%, and increasing throughput by 40\% during peak loads using custom K6 scripts.}
+        \resumeItem{Directed migration of legacy code to Ruby on Rails 6.0 incorporating Webpacker for modern asset management alongside Zeitwerk autoloader, reducing boot time by 22\% and decreasing server response time by 15\%.}
+        \resumeItem{Implemented comprehensive monitoring and alerting using New Relic and Datadog, reducing system outage response time from 30 to 5 minutes.}
+        \resumeItem{Established and executed a CircleCI automated testing suite, increasing code coverage from 78\% to 89\% and reducing post-deployment bugs by 25\%.}
+    \resumeItemListEnd
+
+     \resumeSubheading
+      {Cryoport}{2021-2022}
+      {Senior Software Engineer}{}
+      \resumeItemListStart
+        \resumeItem{Served as a senior engineer for a \$233M supply chain solutions company, implementing a robust tracking system integrating 4G and GPS-enabled devices for cryogenic shipments, improving reliability by 40\%.}
+        \resumeItem{Elevated to interim Scrum Master within 7 months, leading to a 30\% improvement in sprint velocity and burn-down performance during the team's transition to a full-time hire.}
+        \resumeItem{Spearheaded the implementation of a JIRA linter GitHub Action, preventing PR merges with missing required fields, and reducing communication errors between onshore and offshore teams by 43\%.}
+      \resumeItemListEnd
+
+  \resumeSubheading
+      {LegalShield}{2019-2021}
+      {Senior Software Engineer}{}
+      \resumeItemListStart
+        \resumeItem{Integrated and optimized ElasticSearch for over 11M users and 7MM legal service requests, reducing average search time by 60\% from 3 seconds to 1.2 seconds and boosting user satisfaction scores by 25\%.}
+        \resumeItem{Introduced a new OKTA SSO OAuth2 strategy serving 50 partner firms across all states, each with an average of 10 users, resulting in a 40\% reduction in login-related support tickets and a 99.9\% uptime for authentication services.}
+      \resumeItemListEnd
+
+
+    \resumeSubheading
+      {SeaStatus}{2017-2019}
+      {Software Engineer}{}
+      \resumeItemListStart
+        \resumeItem{Launched the Minimum Viable Product (MVP) in 4 months for a data aggregation platform, driving a 290\% increase in monthly active users (2.9K within 18 months), significantly surpassing initial growth projections.}
+        \resumeItem{Secured \$25K in funding by winning 2 categories in the Xprize Big Ocean Button Challenge, integrating multiple data sets, and improving weather prediction accuracy by 35\%.}
+      \resumeItemListEnd
+
+
+    \resumeSubheading
+      {Visage Software}{2015-2017}
+      {Software Engineer}{}
+      \resumeItemListStart
+        \resumeItem{Championed an enterprise solution for mapping user text and charts onto Google Sheets, leading to adoption by LinkedIn offices in the US, UK, and India, and generating over 100 monthly state and national workforce reports.}
+      \resumeItemListEnd
+
+
+  \resumeSubHeadingListEnd
+
+
+
+
+
+\vspace{-16pt}
+
+    % %-----------PROJECTS-----------
+    % \section{Projects}
+    %     \vspace{-5pt}
+    %     \resumeSubHeadingListStart
+    %       \resumeProjectHeading
+    %           {\textbf{Gym Reservation Bot} $|$ \emph{Python, Selenium, Google Cloud Console}}{January 2021}
+    %           \resumeItemListStart
+    %             \resumeItem{Developed an automatic bot using Python and Google Cloud Console to register myself for a timeslot at my school gym.}
+    %             \resumeItem{Implemented Selenium to create an instance of Chrome in order to interact with the correct elements of the web page.}
+    %             \resumeItem{Created a Linux virtual machine to run on Google Cloud so that the program is able to run everyday from the cloud.}
+    %             \resumeItem{Used Cron to schedule the program to execute automatically at 11 AM every morning so a reservation is made for me.}
+    %           \resumeItemListEnd
+    %           \vspace{-13pt}
+    %       \resumeProjectHeading
+    %           {\textbf{Ticket Price Calculator App} $|$ \emph{Java, Android Studio}}{November 2020}
+    %           \resumeItemListStart
+    %             \resumeItem{Created an Android application using Java and Android Studio to calculate ticket prices for trips to museums in NYC.}
+    %             \resumeItem{Processed user inputted information in the back-end of the app to return a subtotal price based on the tickets selected.}
+    %             \resumeItem{Utilized the layout editor to create a UI for the application in order to allow different scenes to interact with each other.}
+    %           \resumeItemListEnd
+    %           \vspace{-13pt}
+    %           \resumeProjectHeading
+    %           {\textbf{Transaction Management GUI} $|$ \emph{Java, Eclipse, JavaFX}}{October 2020}
+    %           \resumeItemListStart
+    %             \resumeItem{Designed a sample banking transaction system using Java to simulate the common functions of using a bank account.}
+    %             \resumeItem{Used JavaFX to create a GUI that supports actions such as creating an account, deposit, withdraw, list all acounts, etc.}
+    %             \resumeItem{Implemented object-oriented programming practices such as inheritance to create different account types and databases.}
+    %           \resumeItemListEnd
+    %     \resumeSubHeadingListEnd
+    % \vspace{-15pt}
+
+
+%
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of California, Irvine}{Sep. 2011 -- May 2015}
+      {Bachelor of Science in Informatics \& Minor in Management}{Irvine, CA}
+  \resumeSubHeadingListEnd
+
+
+% %-----------INVOLVEMENT---------------
+% \section{Leadership / Extracurricular}
+%     \resumeSubHeadingListStart
+%         \resumeSubheading{Fraternity}{Spring 2020 -- Present}{President}{University Name}
+%             \resumeItemListStart
+%                 \resumeItem{Achieved a 4 star fraternity ranking by the Office of Fraternity and Sorority Affairs (highest possible ranking).}
+%                 \resumeItem{Managed executive board of 5 members and ran weekly meetings to oversee progress in essential parts of the chapter.}
+%                 \resumeItem{Led chapter of 30+ members to work towards goals that improve and promote community service, academics, and unity.}
+%             \resumeItemListEnd
+
+%     \resumeSubHeadingListEnd
+
+
+\end{document}
