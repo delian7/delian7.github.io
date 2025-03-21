@@ -16,7 +16,7 @@ const ResumeModalContent = () => {
         </Box>
         <iframe
           title='Delian Petrov Resume'
-          src={`https://drive.google.com/file/d/${docxID}/preview`}
+          src={`https://drive.google.com/file/d/${pdfID}/preview`}
           width="100%"
           height="100%"
           allow="autoplay"
