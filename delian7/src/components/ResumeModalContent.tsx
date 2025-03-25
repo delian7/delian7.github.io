@@ -1,8 +1,8 @@
 import { Box, Button } from "@chakra-ui/react";
 
 const ResumeModalContent = () => {
-    const pdfID = "1nmjdwOv786wJDIAuzkKp8dN8QP0GK43c"; // Define your PDF ID
-    const docxID = "17SXDG-HRIgA8amhI0CbH0b8mhfz5ZcJP"; // Define your DOCX ID
+    const pdfID = "1v_0nUb3ROf64cBAjJzVWqS7zLsuzDT6u"; // Define your PDF ID
+    // const docxID = "17SXDG-HRIgA8amhI0CbH0b8mhfz5ZcJP"; // Define your DOCX ID
 
     return (
       <Box height="900px" display={'flex'} flexDirection={'column'}>
